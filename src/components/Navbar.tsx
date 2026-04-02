@@ -18,6 +18,7 @@ const Navbar = () => {
   }, []);
 
   const links = [
+    { label: "Главная", href: "/", icon: Home },
     { label: "О проекте", href: "#problem" },
     { label: "Сферы применения", href: "/applications" },
     { label: "Калькулятор", href: "#calculator" },
