@@ -1,13 +1,14 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Cpu, FlaskConical, GraduationCap, Megaphone, Monitor } from "lucide-react";
+import { Cpu, FlaskConical, GraduationCap, Megaphone, HeadsetIcon, Wrench } from "lucide-react";
 
 const items = [
   { icon: Cpu, title: "Оборудование", desc: "Автоматизированные фотобиореакторы с системой контроля температуры, pH и освещения" },
   { icon: FlaskConical, title: "Маточный раствор", desc: "Сертифицированные штаммы хлореллы с высокой продуктивностью и стабильностью" },
   { icon: GraduationCap, title: "Обучение и регламенты", desc: "Полный курс обучения персонала, технологические карты и SOP-документация" },
-  { icon: Megaphone, title: "Маркетинг и лиды", desc: "Готовая маркетинговая стратегия, лендинг, CRM и поток заявок от клиентов" },
-  { icon: Monitor, title: "ПО для мониторинга", desc: "Облачная система контроля всех параметров выращивания в реальном времени" },
+  { icon: Megaphone, title: "Маркетинговая стратегия", desc: "Готовая маркетинговая стратегия, брендбук, лендинг и CRM-система" },
+  { icon: HeadsetIcon, title: "Поддержка 3 месяца", desc: "Персональный куратор и техническая поддержка на протяжении первых 3 месяцев работы" },
+  { icon: Wrench, title: "Сервис и запчасти", desc: "Оперативная поставка расходных материалов и запасных частей для оборудования" },
 ];
 
 const PackageSection = () => {
