@@ -43,7 +43,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${forceScrolled ? "bg-background/80 backdrop-blur-xl shadow-sm border-b border-border" : ""}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${forceScrolled ? "bg-background/80 backdrop-blur-xl shadow-sm border-b border-border" : "bg-gradient-to-b from-black/50 to-transparent"}`}>
         <div className="container mx-auto flex items-center justify-between h-16 px-4">
           <div className="flex items-center gap-4">
             <Link to="/" className="flex items-center gap-2">
@@ -72,7 +72,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-6">
             {links.map((l) => (
               <NavItem key={l.href} l={l}
-                className={`text-sm font-medium transition-colors hover:text-primary ${forceScrolled ? "text-muted-foreground" : "text-primary-foreground/70"}`} />
+                className={`text-sm font-medium transition-colors ${forceScrolled ? "text-muted-foreground hover:text-primary" : "text-primary-foreground/90 hover:text-primary-foreground"}`} />
             ))}
             <Button size="sm" onClick={() => setModalOpen(true)} className="gradient-emerald border-0 text-primary-foreground rounded-lg">
               Оставить заявку
