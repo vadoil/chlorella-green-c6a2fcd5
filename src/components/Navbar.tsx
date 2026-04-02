@@ -60,7 +60,7 @@ const Navbar = () => {
           </div>
 
           <button onClick={() => setOpen(!open)} className="md:hidden">
-            {open ? <X className={scrolled ? "text-foreground" : "text-primary-foreground"} /> : <Menu className={scrolled ? "text-foreground" : "text-primary-foreground"} />}
+            {open ? <X className={forceScrolled ? "text-foreground" : "text-primary-foreground"} /> : <Menu className={forceScrolled ? "text-foreground" : "text-primary-foreground"} />}
           </button>
         </div>
 
