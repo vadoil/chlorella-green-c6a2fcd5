@@ -2,6 +2,8 @@ import { useState } from "react";
 import { FileDown, Mail, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const magnets = [
   {
@@ -21,9 +23,21 @@ const magnets = [
 const LeadMagnetSection = () => {
   const [submitted, setSubmitted] = useState<number | null>(null);
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (index: number) => {
+  const handleSubmit = async (index: number) => {
     if (!email) return;
+    setLoading(true);
+    const { error } = await supabase.from("leads").insert({
+      email,
+      source: "lead_magnet",
+      comment: magnets[index].title,
+    });
+    setLoading(false);
+    if (error) {
+      toast.error("Ошибка отправки. Попробуйте позже.");
+      return;
+    }
     setSubmitted(index);
     setEmail("");
     setTimeout(() => setSubmitted(null), 4000);
@@ -46,19 +60,12 @@ const LeadMagnetSection = () => {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {magnets.map((m, i) => (
-            <div
-              key={i}
-              className="rounded-xl border border-border bg-background p-8 flex flex-col"
-            >
+            <div key={i} className="rounded-xl border border-border bg-background p-8 flex flex-col">
               <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-4">
                 <m.icon className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="font-display font-semibold text-lg text-foreground mb-2">
-                {m.title}
-              </h3>
-              <p className="text-sm text-muted-foreground mb-6 flex-1">
-                {m.description}
-              </p>
+              <h3 className="font-display font-semibold text-lg text-foreground mb-2">{m.title}</h3>
+              <p className="text-sm text-muted-foreground mb-6 flex-1">{m.description}</p>
               {submitted === i ? (
                 <div className="flex items-center gap-2 text-primary font-medium text-sm">
                   <CheckCircle className="h-5 w-5" />
@@ -75,6 +82,7 @@ const LeadMagnetSection = () => {
                   />
                   <Button
                     onClick={() => handleSubmit(i)}
+                    disabled={loading}
                     className="gradient-emerald border-0 text-primary-foreground shrink-0"
                   >
                     {m.cta}
