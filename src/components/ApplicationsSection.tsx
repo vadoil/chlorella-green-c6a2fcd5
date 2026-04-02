@@ -1,42 +1,48 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Beef, Fish, Bug, Droplets, Egg, Sprout } from "lucide-react";
+import { Beef, Fish, Bug, Droplets, Egg, Sprout, TrendingUp } from "lucide-react";
 
 const applications = [
   {
     icon: Beef,
     title: "Крупнорогатый скот",
-    desc: "Укрепляет здоровье стада, повышает продуктивность. Богата белками, витаминами и минералами для полноценного роста и развития животных.",
+    desc: "Укрепляет здоровье стада, повышает продуктивность.",
+    benefits: ["Надои +15–25%", "Снижение заболеваемости на 40%", "Экономия на кормах до 20%"],
     image: "https://chlorella-green.ru/wp-content/uploads/2024/08/Screenshot_78-600x650.png",
   },
   {
     icon: Fish,
     title: "Рыбоводство",
-    desc: "Ускоряет рост рыб, укрепляет иммунитет. Улучшает чистоту и прозрачность воды, снижает уровень токсинов и поддерживает кислородный баланс.",
+    desc: "Ускоряет рост рыб, укрепляет иммунитет.",
+    benefits: ["Рост массы +30%", "Выживаемость малька +50%", "Чистота воды без химии"],
     image: "https://chlorella-green.ru/wp-content/uploads/2024/08/i-13-e1724748040603-600x650.webp",
   },
   {
     icon: Bug,
     title: "Пчеловодство",
-    desc: "Укрепляет иммунитет пчёл, увеличивает активность и улучшает качество мёда. Снижает заболеваемость в улье.",
+    desc: "Укрепляет иммунитет пчёл, улучшает качество мёда.",
+    benefits: ["Активность пчёл +20%", "Качество мёда выше", "Снижение гибели в зимовку"],
     image: "https://chlorella-green.ru/wp-content/uploads/2024/08/vVgtEKgnem0-600x650.jpg",
   },
   {
     icon: Droplets,
     title: "Очистка водоёмов",
-    desc: "Устраняет загрязнители, поглощает тяжёлые металлы, улучшает кислородный баланс. Экологичная биоремедиация водоёмов.",
+    desc: "Биоремедиация: поглощает токсины и тяжёлые металлы.",
+    benefits: ["Снижение аммиака на 80%", "Кислород в воде +60%", "Без химических реагентов"],
     image: "https://chlorella-green.ru/wp-content/uploads/2024/08/suspenziya-hlorelly-dlya-rastenij-effektivnost-i-pravila-ispolzovaniya-8-600x650.jpg",
   },
   {
     icon: Egg,
     title: "Птицеводство",
-    desc: "Укрепляет иммунную систему птиц, улучшает качество оперения и яиц, стимулирует рост молодняка.",
+    desc: "Стимулирует рост молодняка и улучшает яйценоскость.",
+    benefits: ["Яйценоскость +18%", "Привес бройлеров +22%", "Крепче скорлупа"],
     image: "https://chlorella-green.ru/wp-content/uploads/2024/08/atg_news_800_96557-600x650.jpg",
   },
   {
     icon: Sprout,
     title: "Растениеводство",
-    desc: "Обогащает почву питательными веществами, улучшает её структуру и водоудерживающую способность, стимулирует здоровый рост.",
+    desc: "Обогащает почву, стимулирует здоровый рост растений.",
+    benefits: ["Урожайность +25–40%", "Всхожесть семян +30%", "Восстановление почвы"],
     image: "https://chlorella-green.ru/wp-content/uploads/2024/08/i-14-scaled-e1724774758545-600x650.webp",
   },
 ];
@@ -58,10 +64,10 @@ const ApplicationsSection = () => {
             Области применения
           </span>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-            Сферы применения хлореллы
+            Сферы применения и выгода
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
-            Хлорелла — универсальная микроводоросль с широким спектром применения в сельском хозяйстве, экологии и пищевой промышленности
+            Каждая сфера — это готовый канал сбыта с измеримыми результатами для ваших клиентов
           </p>
         </motion.div>
 
@@ -90,7 +96,15 @@ const ApplicationsSection = () => {
               </div>
               <div className="p-5">
                 <h3 className="font-display font-semibold text-lg text-foreground mb-2">{app.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{app.desc}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-3">{app.desc}</p>
+                <div className="space-y-1.5">
+                  {app.benefits.map((b) => (
+                    <div key={b} className="flex items-center gap-2 text-sm">
+                      <TrendingUp className="h-3.5 w-3.5 text-primary flex-shrink-0" />
+                      <span className="text-foreground font-medium">{b}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}
