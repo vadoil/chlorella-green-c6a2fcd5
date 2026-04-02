@@ -21,6 +21,8 @@ const Index = () => (
     <div id="package"><PackageSection /></div>
     <div id="steps"><StepsSection /></div>
     <div id="faq"><FaqSection /></div>
+    <div id="blog"><BlogPreviewSection /></div>
+    <LeadMagnetSection />
     <CtaSection />
     <Footer />
   </div>
