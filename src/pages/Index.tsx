@@ -14,7 +14,7 @@ const Index = () => (
     <Navbar />
     <HeroSection />
     <div id="problem"><ProblemSection /></div>
-    <div id="applications"><ApplicationsSection /></div>
+    <div id="applications"><ApplicationsTabsSection /></div>
     <div id="calculator"><CalculatorSection /></div>
     <div id="package"><PackageSection /></div>
     <div id="steps"><StepsSection /></div>
