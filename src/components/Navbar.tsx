@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Leaf, Menu, X } from "lucide-react";
+import { Leaf, Menu, X, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ApplicationModal from "@/components/ApplicationModal";
 
@@ -18,6 +18,7 @@ const Navbar = () => {
   }, []);
 
   const links = [
+    { label: "Главная", href: "/", icon: Home },
     { label: "О проекте", href: "#problem" },
     { label: "Сферы применения", href: "/applications" },
     { label: "Калькулятор", href: "#calculator" },
@@ -29,11 +30,12 @@ const Navbar = () => {
   const isRoute = (href: string) => !href.startsWith("#");
 
   const NavItem = ({ l, className }: { l: typeof links[0]; className: string }) => {
+    const content = l.icon ? <l.icon className="h-4 w-4" /> : l.label;
     if (isRoute(l.href)) {
-      return <Link to={l.href} onClick={() => setOpen(false)} className={className}>{l.label}</Link>;
+      return <Link to={l.href} onClick={() => setOpen(false)} className={className} title={l.label}>{content}</Link>;
     }
     const target = location.pathname === "/" ? l.href : `/${l.href}`;
-    return <a href={target} onClick={() => setOpen(false)} className={className}>{l.label}</a>;
+    return <a href={target} onClick={() => setOpen(false)} className={className} title={l.label}>{content}</a>;
   };
 
   return (
