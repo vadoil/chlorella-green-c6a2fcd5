@@ -8,6 +8,7 @@ import StepsSection from "@/components/StepsSection";
 import FaqSection from "@/components/FaqSection";
 import BlogPreviewSection from "@/components/BlogPreviewSection";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
+import QuizSection from "@/components/QuizSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 
@@ -18,6 +19,7 @@ const Index = () => (
     <div id="problem"><ProblemSection /></div>
     <div id="applications"><ApplicationsTabsSection /></div>
     <div id="calculator"><CalculatorSection /></div>
+    <div id="quiz"><QuizSection /></div>
     <div id="package"><PackageSection /></div>
     <div id="steps"><StepsSection /></div>
     <div id="faq"><FaqSection /></div>
