@@ -9,11 +9,7 @@ import Footer from "@/components/Footer";
 
 const ApplicationForm = ({ sphere }: { sphere: string }) => {
   const [sent, setSent] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSent(true);
-  };
+  const handleSubmit = (e: React.FormEvent) => { e.preventDefault(); setSent(true); };
 
   if (sent) {
     return (
@@ -27,89 +23,119 @@ const ApplicationForm = ({ sphere }: { sphere: string }) => {
 
   return (
     <form onSubmit={handleSubmit} className="rounded-xl bg-card border border-border p-6 space-y-4">
-      <h4 className="font-display font-semibold text-foreground">
-        Получить консультацию по направлению «{sphere}»
-      </h4>
+      <h4 className="font-display font-semibold text-foreground">Получить консультацию по направлению «{sphere}»</h4>
       <div className="grid sm:grid-cols-2 gap-4">
-        <input
-          required
-          type="text"
-          placeholder="Имя"
-          maxLength={100}
-          className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
-        />
-        <input
-          required
-          type="tel"
-          placeholder="Телефон"
-          maxLength={20}
-          className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
-        />
+        <input required type="text" placeholder="Имя" maxLength={100} className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50" />
+        <input required type="tel" placeholder="Телефон" maxLength={20} className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50" />
       </div>
-      <input
-        type="email"
-        placeholder="Email (необязательно)"
-        maxLength={255}
-        className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
-      />
-      <textarea
-        placeholder="Комментарий (необязательно)"
-        maxLength={1000}
-        rows={3}
-        className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none"
-      />
+      <input type="email" placeholder="Email (необязательно)" maxLength={255} className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50" />
+      <textarea placeholder="Комментарий (необязательно)" maxLength={1000} rows={3} className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none" />
       <Button type="submit" className="w-full gradient-emerald border-0 text-primary-foreground rounded-xl">
-        Отправить заявку
-        <ArrowRight className="ml-2 h-4 w-4" />
+        Отправить заявку <ArrowRight className="ml-2 h-4 w-4" />
       </Button>
     </form>
   );
 };
 
-const detailedInfo: Record<string, string[]> = {
-  cattle: [
-    "Хлорелла содержит более 60 биоактивных веществ, которые укрепляют иммунную систему КРС.",
-    "Регулярная добавка суспензии в рацион снижает потребность в антибиотиках на 50–70%.",
-    "Улучшается качество молока: повышается содержание белка и жирность.",
-    "Телята, получающие хлореллу, набирают вес на 15–20% быстрее.",
-  ],
-  fish: [
-    "Хлорелла — естественный корм для фитопланктона, который составляет основу пищевой цепи.",
-    "Суспензия очищает воду от аммиака и нитритов, снижая необходимость в фильтрации.",
-    "Мальки, выращенные на хлорелле, демонстрируют выживаемость на 50% выше.",
-    "Рыба набирает товарную массу на 2–3 месяца быстрее.",
-  ],
-  bees: [
-    "Хлорелла в сиропе укрепляет иммунитет пчёл, снижая заболеваемость нозематозом.",
-    "Пчелиные семьи быстрее наращивают силу после зимовки.",
-    "Мёд от пчёл, получающих хлореллу, содержит больше полезных ферментов.",
-    "Снижается гибель маток и рабочих пчёл в неблагоприятных условиях.",
-  ],
-  water: [
-    "Хлорелла поглощает тяжёлые металлы, фосфаты и нитраты из загрязнённой воды.",
-    "Один литр суспензии способен очистить до 1000 литров воды.",
-    "Биоремедиация не требует дорогостоящих химических реагентов.",
-    "Насыщение воды кислородом восстанавливает естественную экосистему водоёма.",
-  ],
-  poultry: [
-    "Добавка хлореллы повышает яйценоскость кур-несушек на 15–18%.",
-    "Скорлупа становится толще и прочнее, снижая бой при транспортировке.",
-    "Бройлеры достигают убойного веса на 7–10 дней раньше.",
-    "Улучшается цвет желтка и вкусовые качества мяса птицы.",
-  ],
-  crops: [
-    "Полив суспензией хлореллы стимулирует развитие корневой системы растений.",
-    "Восстанавливается микрофлора истощённой почвы за 1–2 сезона.",
-    "Всхожесть семян, обработанных хлореллой, возрастает на 25–30%.",
-    "Урожайность зерновых и овощных культур повышается на 25–40%.",
-  ],
+const detailedInfo: Record<string, { paragraphs: string[]; points: string[] }> = {
+  cattle: {
+    paragraphs: [
+      "Хлорелла — это уникальная одноклеточная водоросль, которая содержит более 60 биоактивных веществ, необходимых для здоровья крупного рогатого скота. Её применение в кормлении КРС позволяет значительно повысить продуктивность стада и снизить затраты на ветеринарию.",
+      "Суспензия хлореллы добавляется в питьевую воду или непосредственно в корм в дозировке 50–100 мл на голову в сутки. Уже через 2–3 недели наблюдается улучшение общего состояния животных: повышается аппетит, улучшается шерстный покров, возрастает двигательная активность.",
+      "Особенно эффективна хлорелла для молодняка — телята, получающие добавку, набирают вес на 15–20% быстрее сверстников. Регулярное применение снижает потребность в антибиотиках на 50–70%, что положительно сказывается на качестве конечной продукции.",
+    ],
+    points: [
+      "Надои молока увеличиваются на 15–25% за счёт улучшения метаболизма",
+      "Снижение заболеваемости стада на 40% благодаря укреплению иммунитета",
+      "Экономия на кормах до 20% за счёт лучшей усвояемости питательных веществ",
+      "Повышение содержания белка и жирности молока",
+      "Снижение расходов на ветпрепараты и антибиотики",
+      "Ускорение набора массы молодняком на 15–20%",
+    ],
+  },
+  fish: {
+    paragraphs: [
+      "В рыбоводстве хлорелла играет двойную роль: она является естественным высокопитательным кормом для фитопланктона и зоопланктона, составляющих основу пищевой цепи, а также мощным биофильтром, очищающим воду от токсичных соединений.",
+      "Внесение суспензии хлореллы в водоёмы и бассейны аквакультуры создаёт благоприятную среду для выращивания рыбы. Водоросль активно поглощает аммиак, нитриты и нитраты, снижая потребность в механической и химической фильтрации. При этом вода насыщается кислородом естественным путём.",
+      "Мальки, выращенные в среде с хлореллой, демонстрируют выживаемость на 50% выше контрольных групп. Товарная рыба набирает массу на 2–3 месяца быстрее, что позволяет сократить производственный цикл и увеличить оборачиваемость бассейнов.",
+    ],
+    points: [
+      "Рост массы рыбы ускоряется на 30% за счёт богатой кормовой базы",
+      "Выживаемость малька повышается на 50% благодаря укреплению иммунитета",
+      "Естественная очистка воды без применения химических реагентов",
+      "Снижение содержания аммиака в воде на 70–80%",
+      "Насыщение воды кислородом до 60% выше нормы",
+      "Сокращение производственного цикла на 2–3 месяца",
+    ],
+  },
+  bees: {
+    paragraphs: [
+      "Пчеловодство — одна из наиболее перспективных сфер применения хлореллы. Добавление суспензии в сахарный сироп для подкормки пчёл значительно укрепляет иммунитет семей, снижает заболеваемость нозематозом и варроатозом, повышает жизнеспособность маток.",
+      "Хлорелла содержит полный спектр витаминов, аминокислот и микроэлементов, необходимых пчёлам в период активного медосбора и подготовки к зимовке. Пчелиные семьи, получающие подкормку с хлореллой, быстрее наращивают силу весной и демонстрируют более высокую лётную активность.",
+      "Результаты полевых испытаний показывают, что мёд от пчёл, получавших хлореллу, содержит больше полезных ферментов и имеет улучшенные органолептические характеристики. Гибель пчёл в зимовку снижается на 30–35%.",
+    ],
+    points: [
+      "Повышение активности пчелиных семей на 20% в сезон медосбора",
+      "Улучшение качества мёда и повышение содержания ферментов",
+      "Снижение гибели пчёл в зимовку на 30–35%",
+      "Укрепление иммунитета против нозематоза и варроатоза",
+      "Ускоренное наращивание силы семей после зимовки",
+      "Повышение жизнеспособности и плодовитости маток",
+    ],
+  },
+  water: {
+    paragraphs: [
+      "Биоремедиация водоёмов с помощью хлореллы — экологически чистый и экономически выгодный метод восстановления качества воды. Хлорелла активно поглощает тяжёлые металлы (свинец, кадмий, ртуть), фосфаты, нитраты и другие токсичные соединения.",
+      "Технология применяется для очистки прудов, озёр, водохранилищ, а также сточных вод промышленных и сельскохозяйственных предприятий. Один литр концентрированной суспензии способен очистить до 1000 литров загрязнённой воды, что делает метод значительно дешевле химических аналогов.",
+      "Помимо очистки, хлорелла насыщает воду кислородом, восстанавливая естественную экосистему водоёма. Это приводит к возвращению рыбы и другой водной фауны, улучшению рекреационных свойств территории.",
+    ],
+    points: [
+      "Снижение содержания аммиака и нитратов на 80%",
+      "Повышение уровня растворённого кислорода на 60%",
+      "Полный отказ от химических реагентов при очистке",
+      "Поглощение тяжёлых металлов: свинец, кадмий, ртуть",
+      "Экономия до 70% по сравнению с химической очисткой",
+      "Восстановление экосистемы водоёма за 1–2 сезона",
+    ],
+  },
+  poultry: {
+    paragraphs: [
+      "В птицеводстве хлорелла применяется как натуральная кормовая добавка для кур-несушек, бройлеров, индеек и уток. Суспензия добавляется в поилки или смешивается с кормом, обеспечивая птицу полным комплексом витаминов, аминокислот и микроэлементов.",
+      "У кур-несушек хлорелла стимулирует яйценоскость: количество яиц увеличивается на 15–18%, при этом скорлупа становится толще и прочнее, что снижает бой при транспортировке. Желток приобретает более насыщенный цвет благодаря высокому содержанию каротиноидов в хлорелле.",
+      "Бройлеры, получающие хлореллу, достигают убойного веса на 7–10 дней раньше стандартных сроков. Привес увеличивается на 22%, при этом улучшаются вкусовые качества мяса. Снижается падёж молодняка и расход антибиотиков.",
+    ],
+    points: [
+      "Яйценоскость кур-несушек увеличивается на 15–18%",
+      "Привес бройлеров повышается на 22% при тех же объёмах корма",
+      "Укрепление скорлупы — снижение боя при транспортировке",
+      "Насыщенный цвет желтка благодаря каротиноидам",
+      "Достижение убойного веса на 7–10 дней раньше",
+      "Снижение падёжа молодняка и расхода антибиотиков",
+    ],
+  },
+  crops: {
+    paragraphs: [
+      "Хлорелла в растениеводстве используется для полива, замачивания семян и внекорневой подкормки. Суспензия содержит фитогормоны (ауксины, цитокинины, гиббереллины), которые стимулируют деление клеток, развитие корневой системы и ускоряют рост растений.",
+      "Полив суспензией хлореллы обогащает почву полезной микрофлорой и органическими веществами. За 1–2 сезона восстанавливается плодородие истощённых земель, улучшается структура почвы, повышается влагоёмкость. Это особенно важно для регионов интенсивного земледелия.",
+      "Замачивание семян в суспензии хлореллы перед посадкой увеличивает всхожесть на 25–30% и ускоряет появление всходов на 3–5 дней. Урожайность зерновых, овощных и плодовых культур повышается на 25–40% без применения химических удобрений.",
+    ],
+    points: [
+      "Повышение урожайности зерновых и овощей на 25–40%",
+      "Увеличение всхожести семян на 25–30% при замачивании",
+      "Восстановление плодородия истощённых почв за 1–2 сезона",
+      "Ускорение появления всходов на 3–5 дней",
+      "Стимуляция корневой системы фитогормонами хлореллы",
+      "Полная замена химических удобрений на биологические",
+    ],
+  },
 };
 
 const ApplicationCard = ({ app, index }: { app: typeof applications[0]; index: number }) => {
   const [expanded, setExpanded] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const details = detailedInfo[app.id] || [];
+  const details = detailedInfo[app.id];
+  const isEven = index % 2 === 0;
 
   return (
     <motion.div
@@ -120,20 +146,21 @@ const ApplicationCard = ({ app, index }: { app: typeof applications[0]; index: n
       transition={{ duration: 0.5, delay: index * 0.05 }}
       className="rounded-2xl bg-card border border-border overflow-hidden scroll-mt-24"
     >
-      <div className="grid md:grid-cols-2">
-        <div className="relative h-64 md:h-auto overflow-hidden">
+      <div className={`grid md:grid-cols-2 ${!isEven ? "md:[direction:rtl]" : ""}`}>
+        <div className="relative h-72 md:h-auto md:min-h-[400px] overflow-hidden md:[direction:ltr]">
           <img src={app.image} alt={app.fullTitle} className="w-full h-full object-cover" loading="lazy" />
-          <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 to-transparent md:bg-gradient-to-r" />
+          <div className={`absolute inset-0 bg-gradient-to-t from-foreground/50 to-transparent ${isEven ? "md:bg-gradient-to-r" : "md:bg-gradient-to-l"}`} />
           <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">
-            <div className="w-12 h-12 rounded-xl gradient-emerald flex items-center justify-center">
-              <app.icon className="h-6 w-6 text-primary-foreground" />
+            <div className="w-14 h-14 rounded-xl gradient-emerald flex items-center justify-center shadow-lg">
+              <app.icon className="h-7 w-7 text-primary-foreground" />
             </div>
           </div>
         </div>
 
-        <div className="p-6 md:p-8 space-y-5">
-          <h2 className="font-display text-2xl font-bold text-foreground">{app.fullTitle}</h2>
-          <p className="text-muted-foreground leading-relaxed">{app.desc}</p>
+        <div className="p-6 md:p-10 space-y-5 md:[direction:ltr]">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground">{app.fullTitle}</h2>
+          <p className="text-muted-foreground leading-relaxed text-base">{details.paragraphs[0]}</p>
+          <p className="text-muted-foreground leading-relaxed text-sm">{details.paragraphs[1]}</p>
 
           <div className="grid grid-cols-3 gap-3">
             {app.benefits.map((b) => (
@@ -148,7 +175,7 @@ const ApplicationCard = ({ app, index }: { app: typeof applications[0]; index: n
             onClick={() => setExpanded(!expanded)}
             className="flex items-center gap-2 text-primary font-medium text-sm hover:underline"
           >
-            {expanded ? "Свернуть" : "Подробнее"}
+            {expanded ? "Свернуть" : "Подробнее и заявка"}
             <ChevronDown className={`h-4 w-4 transition-transform ${expanded ? "rotate-180" : ""}`} />
           </button>
         </div>
@@ -160,17 +187,23 @@ const ApplicationCard = ({ app, index }: { app: typeof applications[0]; index: n
           animate={{ opacity: 1, height: "auto" }}
           className="border-t border-border"
         >
-          <div className="p-6 md:p-8 grid md:grid-cols-2 gap-8">
-            <div className="space-y-4">
-              <h3 className="font-display font-semibold text-lg text-foreground">Преимущества</h3>
-              <ul className="space-y-3">
-                {details.map((d) => (
-                  <li key={d} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground text-sm leading-relaxed">{d}</span>
-                  </li>
-                ))}
-              </ul>
+          <div className="p-6 md:p-10 grid md:grid-cols-2 gap-8">
+            <div className="space-y-6">
+              <div>
+                <h3 className="font-display font-semibold text-lg text-foreground mb-3">Как это работает</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{details.paragraphs[2]}</p>
+              </div>
+              <div>
+                <h3 className="font-display font-semibold text-lg text-foreground mb-3">Ключевые результаты</h3>
+                <ul className="space-y-3">
+                  {details.points.map((d) => (
+                    <li key={d} className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-muted-foreground text-sm leading-relaxed">{d}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
             <ApplicationForm sphere={app.fullTitle} />
           </div>
@@ -211,7 +244,7 @@ const ApplicationsPage = () => {
       </section>
 
       <section className="pb-20 section-padding">
-        <div className="container mx-auto space-y-8">
+        <div className="container mx-auto space-y-10">
           {applications.map((app, i) => (
             <ApplicationCard key={app.id} app={app} index={i} />
           ))}
