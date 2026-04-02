@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Leaf, Menu, X, Home } from "lucide-react";
+import { Leaf, Menu, X, Home, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ApplicationModal from "@/components/ApplicationModal";
+
+const WHATSAPP_NUMBER = "79277022777";
+const TELEGRAM_USERNAME = "chlorella_green";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
