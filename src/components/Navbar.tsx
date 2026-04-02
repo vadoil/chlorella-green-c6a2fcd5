@@ -44,7 +44,7 @@ const Navbar = () => {
             <div className="w-8 h-8 rounded-lg gradient-emerald flex items-center justify-center">
               <Leaf className="h-4 w-4 text-primary-foreground" />
             </div>
-            <span className={`font-display font-bold text-lg ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
+            <span className={`font-display font-bold text-lg ${forceScrolled ? "text-foreground" : "text-primary-foreground"}`}>
               Chlorella Green
             </span>
           </Link>
