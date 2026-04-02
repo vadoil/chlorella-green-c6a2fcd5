@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import ApplicationsPage from "./pages/Applications.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import FloatingChat from "./components/FloatingChat.tsx";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <FloatingChat />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
