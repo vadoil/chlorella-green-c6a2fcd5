@@ -69,7 +69,7 @@ const HeroSection = () => {
             <Button
               variant="outline"
               size="lg"
-              className="text-lg px-8 py-6 rounded-xl border-primary-foreground/20 text-primary-foreground/90 hover:bg-primary-foreground/10 backdrop-blur-sm"
+              className="text-lg px-8 py-6 rounded-xl border-2 border-emerald-glow/50 text-emerald-glow hover:bg-emerald-glow/10 backdrop-blur-sm"
             >
               <Play className="mr-2 h-5 w-5" />
               Смотреть видео
