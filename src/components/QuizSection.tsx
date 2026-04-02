@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { MapPin, Target, Wallet, ArrowRight, ArrowLeft, CheckCircle2, Calculator } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 type Step = {
   title: string;
@@ -62,6 +64,7 @@ const QuizSection = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const selectOption = (value: string) => {
     const updated = [...answers];
@@ -83,6 +86,26 @@ const QuizSection = () => {
 
   const regionLabel = steps[0].options.find(o => o.value === answers[0])?.label || "—";
   const directionLabel = steps[1].options.find(o => o.value === answers[1])?.label || "—";
+
+  const handleSubmit = async () => {
+    if (!name.trim() || !phone.trim()) return;
+    setLoading(true);
+    const { error } = await supabase.from("leads").insert({
+      name: name.trim(),
+      phone: phone.trim(),
+      source: "quiz",
+      quiz_region: answers[0] || null,
+      quiz_direction: answers[1] || null,
+      quiz_budget: answers[2] || null,
+      quiz_result: result,
+    });
+    setLoading(false);
+    if (error) {
+      toast.error("Ошибка отправки. Попробуйте позже.");
+      return;
+    }
+    setSubmitted(true);
+  };
 
   if (submitted) {
     return (
@@ -213,11 +236,11 @@ const QuizSection = () => {
                 <ArrowLeft className="h-4 w-4" /> Назад
               </Button>
               <Button
-                onClick={() => setSubmitted(true)}
-                disabled={!name.trim() || !phone.trim()}
+                onClick={handleSubmit}
+                disabled={!name.trim() || !phone.trim() || loading}
                 className="gradient-emerald border-0 text-primary-foreground gap-2"
               >
-                Получить бизнес-план <CheckCircle2 className="h-4 w-4" />
+                {loading ? "Отправка..." : "Получить бизнес-план"} <CheckCircle2 className="h-4 w-4" />
               </Button>
             </div>
           </div>
