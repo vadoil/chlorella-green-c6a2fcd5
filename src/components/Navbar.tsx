@@ -72,7 +72,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-6">
             {links.map((l) => (
               <NavItem key={l.href} l={l}
-                className={`text-sm font-medium transition-colors hover:text-primary ${forceScrolled ? "text-muted-foreground" : "text-primary-foreground/70"}`} />
+                className={`text-sm font-medium transition-colors ${forceScrolled ? "text-muted-foreground hover:text-primary" : "text-primary-foreground/90 hover:text-primary-foreground"}`} />
             ))}
             <Button size="sm" onClick={() => setModalOpen(true)} className="gradient-emerald border-0 text-primary-foreground rounded-lg">
               Оставить заявку
