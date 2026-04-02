@@ -6,6 +6,8 @@ import CalculatorSection from "@/components/CalculatorSection";
 import PackageSection from "@/components/PackageSection";
 import StepsSection from "@/components/StepsSection";
 import FaqSection from "@/components/FaqSection";
+import BlogPreviewSection from "@/components/BlogPreviewSection";
+import LeadMagnetSection from "@/components/LeadMagnetSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 
