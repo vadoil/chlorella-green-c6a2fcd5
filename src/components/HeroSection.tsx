@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ApplicationModal from "@/components/ApplicationModal";
-import heroImage from "@/assets/hero-bioreactor.jpg";
+import heroImage from "@/assets/hero-ibc-cubes.jpg";
 
 const HeroSection = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -11,8 +11,8 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
-        <img src={heroImage} alt="Биореакторы для выращивания хлореллы" className="w-full h-full object-cover" width={1920} height={1080} />
-        <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/70 to-foreground/40" />
+        <img src={heroImage} alt="Промышленные IBC-биореакторы с живой хлореллой и системой аэрации" className="w-full h-full object-cover" width={1920} height={1080} />
+        <div className="absolute inset-0 bg-gradient-to-r from-foreground/95 via-foreground/75 to-foreground/30" />
       </div>
       <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-primary/20 blur-[120px] animate-float" />
 
