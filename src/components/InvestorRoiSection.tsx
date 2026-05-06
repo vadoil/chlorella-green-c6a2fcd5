@@ -34,8 +34,9 @@ const InvestorRoiSection = () => {
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(160_84%_8%)]/95 via-[hsl(160_70%_12%)]/92 to-[hsl(160_84%_10%)]/95" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,transparent_0%,hsl(160_84%_6%)/0.6_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(160_84%_6%)]/98 via-[hsl(160_75%_9%)]/96 to-[hsl(160_84%_7%)]/98" />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,hsl(160_84%_4%)/0.7_100%)]" />
       </div>
 
       <div className="container mx-auto max-w-5xl relative z-10" ref={ref}>
