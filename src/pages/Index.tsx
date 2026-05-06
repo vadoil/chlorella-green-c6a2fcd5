@@ -21,10 +21,10 @@ const Index = () => (
     <Navbar />
     <HeroSection />
     <div id="problem"><ProblemSection /></div>
+    <div id="applications"><ApplicationsTabsSection /></div>
     <MarketOpportunitySection />
     <InvestorRoiSection />
     <WhyChooseUsSection />
-    <div id="applications"><ApplicationsTabsSection /></div>
     <div id="calculator"><CalculatorSection /></div>
     <ScenariosSection />
     <div id="quiz"><QuizSection /></div>
