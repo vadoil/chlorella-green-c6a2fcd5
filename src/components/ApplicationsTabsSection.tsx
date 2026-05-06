@@ -7,6 +7,24 @@ import { Link } from "react-router-dom";
 
 const applications = [
   {
+    id: "fish",
+    icon: Fish,
+    title: "Аквакультура",
+    fullTitle: "Аквакультура: рыбхозы и пруды",
+    desc: "Главный рынок сбыта. Промышленные и частные пруды по разведению рыбы используют суспензию хлореллы для борьбы с токсичным цветением водоёмов, активации клёва на платных рыбалках и увеличения набора массы рыбы до 20%.",
+    benefits: ["Прирост массы рыбы до +20%", "Активация клёва", "Без токсичного цветения"],
+    image: "https://chlorella-green.ru/wp-content/uploads/2024/08/i-13-e1724748040603-600x650.webp",
+  },
+  {
+    id: "crops",
+    icon: Sprout,
+    title: "Садоводы",
+    fullTitle: "Садоводы-частники",
+    desc: "Массовый розничный рынок. Суспензия хлореллы используется как биоудобрение: повышает всхожесть семян, ускоряет рост рассады, увеличивает урожайность овощных и плодовых культур без применения химии.",
+    benefits: ["Биоудобрение для огорода", "Урожайность +25–40%", "Всхожесть семян +30%"],
+    image: "https://chlorella-green.ru/wp-content/uploads/2024/08/i-14-scaled-e1724774758545-600x650.webp",
+  },
+  {
     id: "cattle",
     icon: Beef,
     title: "КРС",
@@ -14,15 +32,6 @@ const applications = [
     desc: "Хлорелла укрепляет здоровье стада, повышает иммунитет и продуктивность. Добавка в рацион снижает расходы на ветеринарию и корма.",
     benefits: ["Надои +15–25%", "Заболеваемость −40%", "Экономия на кормах до 20%"],
     image: "https://chlorella-green.ru/wp-content/uploads/2024/08/Screenshot_78-600x650.png",
-  },
-  {
-    id: "fish",
-    icon: Fish,
-    title: "Рыбоводство",
-    fullTitle: "Рыбоводство",
-    desc: "Ускоряет рост рыб, повышает выживаемость малька и очищает воду естественным путём без применения химии.",
-    benefits: ["Рост массы +30%", "Выживаемость малька +50%", "Чистота воды без химии"],
-    image: "https://chlorella-green.ru/wp-content/uploads/2024/08/i-13-e1724748040603-600x650.webp",
   },
   {
     id: "bees",
@@ -51,15 +60,6 @@ const applications = [
     benefits: ["Яйценоскость +18%", "Привес бройлеров +22%", "Крепче скорлупа"],
     image: "https://chlorella-green.ru/wp-content/uploads/2024/08/atg_news_800_96557-600x650.jpg",
   },
-  {
-    id: "crops",
-    icon: Sprout,
-    title: "Растениеводство",
-    fullTitle: "Растениеводство",
-    desc: "Обогащает почву микроэлементами, стимулирует здоровый рост растений и повышает всхожесть семян.",
-    benefits: ["Урожайность +25–40%", "Всхожесть семян +30%", "Восстановление почвы"],
-    image: "https://chlorella-green.ru/wp-content/uploads/2024/08/i-14-scaled-e1724774758545-600x650.webp",
-  },
 ];
 
 export { applications };
@@ -78,13 +78,13 @@ const ApplicationsTabsSection = () => {
           className="text-center mb-12"
         >
           <span className="text-sm font-semibold uppercase tracking-widest text-primary mb-4 block">
-            Области применения
+            Рынки сбыта
           </span>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-            Сферы применения и выгода
+            Кому продавать суспензию хлореллы
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
-            Каждая сфера — готовый канал сбыта с измеримыми результатами
+            Два основных рынка — аквакультура и садоводы-частники. Плюс растущий спрос в животноводстве и экологии.
           </p>
         </motion.div>
 
@@ -93,7 +93,7 @@ const ApplicationsTabsSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <Tabs defaultValue="cattle" className="w-full">
+          <Tabs defaultValue="fish" className="w-full">
             <TabsList className="w-full flex flex-wrap h-auto gap-1 bg-muted/50 p-1.5 rounded-xl mb-8">
               {applications.map((app) => (
                 <TabsTrigger
