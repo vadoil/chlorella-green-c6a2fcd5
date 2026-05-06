@@ -64,6 +64,11 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
@@ -71,6 +76,11 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Unbounded', 'Space Grotesk', sans-serif;
     letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background-color: hsl(var(--primary) / 0.2);
+    color: hsl(var(--primary));
   }
 }
 
