@@ -4,7 +4,7 @@ import farmImage from "@/assets/chlorella-facility-wide.jpg";
 
 const roiData = [
   { label: "Потенциальная маржа", value: "55%+", sub: "при стабильном производстве" },
-  { label: "Срок окупаемости", value: "8–12 мес.", sub: "в зависимости от пакета" },
+  { label: "Срок окупаемости", value: "4–6 мес.", sub: "в зависимости от региона" },
   { label: "Себестоимость литра", value: "~15 ₽", sub: "одна из самых низких в отрасли" },
   { label: "Рост рынка", value: "9.8%", sub: "CAGR до 2030 года" },
 ];
