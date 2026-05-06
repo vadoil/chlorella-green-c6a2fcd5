@@ -111,20 +111,21 @@ const Navbar = () => {
               </span>
             </Link>
 
-            <div
-              className={`hidden lg:flex items-center gap-3 ml-2 pl-4 border-l ${
-                forceScrolled ? "border-border" : "border-primary-foreground/20"
-              }`}
-            >
-              <a
-                href="tel:+79277022777"
-                className={`flex items-center gap-1.5 text-sm font-medium hover:text-primary transition-colors ${
-                  forceScrolled ? "text-muted-foreground" : "text-primary-foreground/80"
+          </div>
+
+          <div className="hidden md:flex items-center gap-5">
+            {links.map((l) => (
+              <NavItem
+                key={l.href}
+                l={l}
+                className={`text-sm font-medium transition-colors relative ${
+                  forceScrolled
+                    ? "text-muted-foreground hover:text-primary"
+                    : "text-primary-foreground/90 hover:text-primary-foreground"
                 }`}
-              >
-                <Phone className="h-3.5 w-3.5" />
-                +7 (927) 702-27-77
-              </a>
+              />
+            ))}
+            <div className={`flex items-center gap-2 pl-3 border-l ${forceScrolled ? "border-border" : "border-primary-foreground/20"}`}>
               <a
                 href={`https://wa.me/${WHATSAPP_NUMBER}`}
                 target="_blank"
@@ -152,20 +153,6 @@ const Navbar = () => {
                 </svg>
               </a>
             </div>
-          </div>
-
-          <div className="hidden md:flex items-center gap-5">
-            {links.map((l) => (
-              <NavItem
-                key={l.href}
-                l={l}
-                className={`text-sm font-medium transition-colors relative ${
-                  forceScrolled
-                    ? "text-muted-foreground hover:text-primary"
-                    : "text-primary-foreground/90 hover:text-primary-foreground"
-                }`}
-              />
-            ))}
             <CallbackButton
               variant={forceScrolled ? "outline" : "light"}
               size="sm"
