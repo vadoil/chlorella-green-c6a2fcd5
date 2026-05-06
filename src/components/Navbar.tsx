@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Leaf, Menu, X, Home, Phone } from "lucide-react";
+import { Leaf, Menu, X, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ApplicationModal from "@/components/ApplicationModal";
 import CallbackButton from "@/components/CallbackButton";
