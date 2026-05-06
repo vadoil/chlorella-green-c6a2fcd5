@@ -43,6 +43,10 @@ const HeroSection = () => {
               Получить финансовую модель
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
+            <Button size="lg" asChild
+              className="bg-emerald-glow/10 border-2 border-emerald-glow/50 text-emerald-glow hover:bg-emerald-glow/20 text-lg px-8 py-6 rounded-xl backdrop-blur-sm">
+              <a href="#calculator">Рассчитать прибыль</a>
+            </Button>
             <Button variant="outline" size="lg" asChild
               className="text-lg px-8 py-6 rounded-xl border-2 border-emerald-glow/50 text-emerald-glow hover:bg-emerald-glow/10 backdrop-blur-sm">
               <a href="/chlorella-presentation.pdf" download>

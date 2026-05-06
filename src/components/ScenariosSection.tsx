@@ -27,6 +27,7 @@ const ScenariosSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const [modalOpen, setModalOpen] = useState(false);
+  const [selectedScenario, setSelectedScenario] = useState<string | undefined>();
 
   return (
     <section className="section-padding bg-secondary/30">
@@ -63,9 +64,15 @@ const ScenariosSection = () => {
               <p className="text-foreground/80 leading-relaxed mb-6 flex-1 text-sm">
                 {s.desc}
               </p>
-              <div className="border-t border-border pt-4">
+              <div className="border-t border-border pt-4 mb-4">
                 <div className="text-muted-foreground text-xs">{s.result}</div>
               </div>
+              <button
+                onClick={() => { setSelectedScenario(s.title); setModalOpen(true); }}
+                className="w-full py-3 rounded-lg bg-primary/10 text-primary font-display font-bold text-xs uppercase tracking-wider hover:bg-primary hover:text-primary-foreground transition-colors"
+              >
+                Выбрать этот формат →
+              </button>
             </motion.div>
           ))}
         </div>
@@ -84,7 +91,7 @@ const ScenariosSection = () => {
           </button>
         </motion.div>
       </div>
-      <ApplicationModal open={modalOpen} onOpenChange={setModalOpen} />
+      <ApplicationModal open={modalOpen} onOpenChange={setModalOpen} defaultComment={selectedScenario ? `Интересует формат: ${selectedScenario}` : undefined} />
     </section>
   );
 };

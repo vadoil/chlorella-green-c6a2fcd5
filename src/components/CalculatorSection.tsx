@@ -102,6 +102,25 @@ const CalculatorSection = () => {
           <p className="text-xs text-muted-foreground text-center mt-6">
             Расчёт по средним показателям действующих партнёров. Фактические цифры зависят от региона, каналов сбыта и операционной эффективности.
           </p>
+
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
+            <a
+              href={`https://wa.me/79277022777?text=${encodeURIComponent(
+                `Здравствуйте! Хочу обсудить расчёт: ${reactors} биореакторов, прибыль ${formatNumber(monthlyProfit)} ₽/мес, инвестиции ${formatNumber(investment)} ₽, окупаемость ${paybackMonths} мес.`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl gradient-emerald text-primary-foreground font-semibold hover:scale-105 transition-transform"
+            >
+              Отправить расчёт в WhatsApp
+            </a>
+            <a
+              href="tel:+79277022777"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-primary/40 text-primary font-semibold hover:bg-primary/10 transition-colors"
+            >
+              Позвонить эксперту
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

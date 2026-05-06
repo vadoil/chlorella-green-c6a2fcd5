@@ -89,14 +89,22 @@ const InvestmentCompareSection = () => {
           </div>
         </motion.div>
 
-        <motion.p
+        <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-center text-xs text-muted-foreground mt-6"
+          className="text-center mt-8"
         >
-          Данные приведены для сравнения. Доходность франшизы рассчитана на основе показателей действующих партнёров.
-        </motion.p>
+          <a
+            href="#calculator"
+            className="inline-flex items-center justify-center px-8 py-4 rounded-xl gradient-emerald text-primary-foreground font-display font-bold uppercase tracking-wider hover:scale-105 transition-transform"
+          >
+            Получить персональный расчёт →
+          </a>
+          <p className="text-xs text-muted-foreground mt-6">
+            Данные приведены для сравнения. Доходность франшизы рассчитана на основе показателей действующих партнёров.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
