@@ -1,16 +1,13 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Package, FlaskConical, GraduationCap, Users, FileCheck, Globe, Megaphone, HeadphonesIcon } from "lucide-react";
+import { Boxes, FileText, HeadphonesIcon, FlaskConical, Globe } from "lucide-react";
 
 const items = [
-  { icon: Package, title: "Полный комплект оборудования", desc: "Биореакторы, аэрация, освещение, насосы, тара — всё доставлено и смонтировано." },
-  { icon: FlaskConical, title: "Маточные культуры штаммов", desc: "Отобранные штаммы хлореллы с протоколом культивирования и паспортом качества." },
-  { icon: GraduationCap, title: "Очное обучение 5 дней", desc: "Технология производства, контроль качества, упаковка — на действующей ферме." },
-  { icon: FileCheck, title: "Пакет документов", desc: "ТУ, декларация соответствия, инструкции, журналы, шаблоны договоров с клиентами." },
-  { icon: Globe, title: "Готовый сайт и CRM", desc: "Лендинг под ваш регион, настроенная CRM, телефония и Telegram-бот для заявок." },
-  { icon: Megaphone, title: "Маркетинг-кит", desc: "Реклама в Яндекс.Директ, креативы, скрипты продаж, презентации для B2B-клиентов." },
-  { icon: Users, title: "База B2B-клиентов", desc: "Контакты агрохолдингов, рыбхозов и производителей БАД в вашем регионе." },
-  { icon: HeadphonesIcon, title: "Куратор на 6 месяцев", desc: "Личный наставник, чат поддержки 24/7, еженедельные созвоны до первой прибыли." },
+  { icon: Boxes, title: "Кит-комплект биореактора", desc: "Готовый комплект для самостоятельной сборки по пошаговой инструкции." },
+  { icon: FileText, title: "Технологическая документация", desc: "Полный регламент производства суспензии хлореллы: рецептура, режимы, контроль." },
+  { icon: HeadphonesIcon, title: "Консультирование и сопровождение", desc: "Поддержка по технологии культивирования суспензии хлореллы на всех этапах." },
+  { icon: FlaskConical, title: "Питательная среда на 2000 л", desc: "Унифицированная среда для старта — хватает на 2000 литров готовой суспензии." },
+  { icon: Globe, title: "Сайт-магазин с эквайрингом", desc: "Готовый интернет-магазин с подключённым приёмом онлайн-платежей." },
 ];
 
 const StarterKitSection = () => {
@@ -33,11 +30,11 @@ const StarterKitSection = () => {
             Что вы получаете в день старта
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
-            8 ключевых компонентов готового бизнеса — никаких «доплат за дополнительные модули»
+            5 ключевых компонентов готового бизнеса — всё включено в стоимость франшизы
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {items.map((item, i) => (
             <motion.div
               key={item.title}
