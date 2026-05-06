@@ -1,11 +1,12 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Boxes, FileText, HeadphonesIcon, FlaskConical, Globe } from "lucide-react";
+import { Boxes, FileText, HeadphonesIcon, FlaskConical, Globe, Sprout } from "lucide-react";
 
 const items = [
   { icon: Boxes, title: "Кит-комплект биореактора", desc: "Готовый комплект для самостоятельной сборки по пошаговой инструкции." },
   { icon: FileText, title: "Технологическая документация", desc: "Полный регламент производства суспензии хлореллы: рецептура, режимы, контроль." },
   { icon: HeadphonesIcon, title: "Консультирование и сопровождение", desc: "Поддержка по технологии культивирования суспензии хлореллы на всех этапах." },
+  { icon: Sprout, title: "Маточная культура хлореллы", desc: "Живая маточная культура для старта франшизы — основа всех производственных циклов." },
   { icon: FlaskConical, title: "Питательная среда на 2000 л", desc: "Унифицированная среда для старта — хватает на 2000 литров готовой суспензии." },
   { icon: Globe, title: "Сайт-магазин с эквайрингом", desc: "Готовый интернет-магазин с подключённым приёмом онлайн-платежей." },
 ];
