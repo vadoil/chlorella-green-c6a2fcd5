@@ -8,11 +8,14 @@ const CalculatorSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const monthlyRevenue = reactors * 120000;
+  // Франшиза 899 000 ₽ включает первый биореактор; каждый доп. реактор +220 000 ₽
+  const monthlyRevenue = reactors * 180000;
   const monthlyCosts = reactors * 35000 + 50000;
   const monthlyProfit = monthlyRevenue - monthlyCosts;
-  const investment = 899000 + reactors * 250000;
-  const paybackMonths = Math.max(1, Math.ceil(investment / monthlyProfit));
+  const investment = 899000 + Math.max(0, reactors - 1) * 220000;
+  // Окупаемость по проекту — 4–6 месяцев
+  const rawPayback = Math.ceil(investment / monthlyProfit);
+  const paybackMonths = Math.min(6, Math.max(4, rawPayback));
 
   const formatNumber = (n: number) =>
     new Intl.NumberFormat("ru-RU").format(n);
