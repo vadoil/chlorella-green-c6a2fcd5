@@ -169,8 +169,8 @@ const Navbar = () => {
             <CallbackButton
               variant={forceScrolled ? "outline" : "light"}
               size="sm"
-              className="text-sm px-4 py-2"
-              label="Звонок"
+              className="text-sm px-3 py-2"
+              label="+7 (927) 702-27-77"
             />
             <Button
               size="sm"
