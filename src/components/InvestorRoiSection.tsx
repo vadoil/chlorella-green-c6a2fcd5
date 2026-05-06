@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import farmImage from "@/assets/chlorella-farm-closeup.jpg";
+import farmImage from "@/assets/chlorella-facility-wide.jpg";
 
 const roiData = [
   { label: "Потенциальная маржа", value: "55%+", sub: "при стабильном производстве" },
