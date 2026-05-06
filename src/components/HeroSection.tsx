@@ -54,9 +54,9 @@ const HeroSection = () => {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }}
             className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-primary-foreground/10 max-w-xl">
             {[
-              { value: "300%+", label: "Маржинальность" },
-              { value: "6 мес", label: "Окупаемость" },
-              { value: "15+", label: "Франчайзи" },
+              { value: "55%+", label: "Маржинальность" },
+              { value: "8–12 мес", label: "Окупаемость" },
+              { value: "9.8%", label: "Рост рынка" },
             ].map((stat) => (
               <div key={stat.label}>
                 <div className="font-display text-2xl md:text-3xl font-bold text-emerald-glow">{stat.value}</div>
@@ -66,7 +66,25 @@ const HeroSection = () => {
           </motion.div>
         </div>
       </div>
+
+      <motion.a
+        href="#problem"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, y: [0, 8, 0] }}
+        transition={{ delay: 1.2, duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-primary-foreground/60 hover:text-primary-foreground transition-colors hidden md:flex flex-col items-center gap-1 z-10"
+        aria-label="Прокрутить вниз"
+      >
+        <span className="text-xs uppercase tracking-widest">Подробнее</span>
+        <ChevronDown className="h-5 w-5" />
+      </motion.a>
+
       <ApplicationModal open={modalOpen} onOpenChange={setModalOpen} />
+    </section>
+  );
+};
+
+export default HeroSection;
     </section>
   );
 };
