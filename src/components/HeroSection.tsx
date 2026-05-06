@@ -22,7 +22,7 @@ const HeroSection = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 mb-8 backdrop-blur-sm">
             <span className="h-2 w-2 rounded-full bg-emerald-glow animate-pulse" />
-            <span className="text-sm font-medium text-primary-foreground/90">Франшиза с маржинальностью от 300%</span>
+            <span className="text-sm font-medium text-primary-foreground/90">Франшиза от 899 000 ₽ · окупаемость 4–6 мес</span>
           </motion.div>
 
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}

@@ -10,15 +10,11 @@ import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import ApplicationsTabsSection from "@/components/ApplicationsTabsSection";
 import CalculatorSection from "@/components/CalculatorSection";
 import ScenariosSection from "@/components/ScenariosSection";
-import StarterKitSection from "@/components/StarterKitSection";
 import TimelineSection from "@/components/TimelineSection";
 import GuaranteesSection from "@/components/GuaranteesSection";
 import MarketplaceExamplesSection from "@/components/MarketplaceExamplesSection";
-
 import PackageSection from "@/components/PackageSection";
-import StepsSection from "@/components/StepsSection";
 import ObjectionsFaqSection from "@/components/ObjectionsFaqSection";
-import FaqSection from "@/components/FaqSection";
 import BlogPreviewSection from "@/components/BlogPreviewSection";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
 import QuizSection from "@/components/QuizSection";
@@ -41,12 +37,9 @@ const Index = () => (
     <div id="calculator"><CalculatorSection /></div>
     <ScenariosSection />
     <div id="quiz"><QuizSection /></div>
-    <StarterKitSection />
     <div id="package"><PackageSection /></div>
-    <TimelineSection />
-    <div id="steps"><StepsSection /></div>
+    <div id="steps"><TimelineSection /></div>
     <GuaranteesSection />
-    
     <div id="faq"><ObjectionsFaqSection /></div>
     <div id="blog"><BlogPreviewSection /></div>
     <LeadMagnetSection />

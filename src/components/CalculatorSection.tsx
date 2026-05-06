@@ -13,9 +13,8 @@ const CalculatorSection = () => {
   const monthlyCosts = reactors * 35000 + 50000;
   const monthlyProfit = monthlyRevenue - monthlyCosts;
   const investment = 899000 + Math.max(0, reactors - 1) * 220000;
-  // Окупаемость по проекту — 4–6 месяцев
-  const rawPayback = Math.ceil(investment / monthlyProfit);
-  const paybackMonths = Math.min(6, Math.max(4, rawPayback));
+  // Честный расчёт окупаемости (без принудительного клэмпа снизу)
+  const paybackMonths = Math.max(1, Math.ceil(investment / monthlyProfit));
 
   const formatNumber = (n: number) =>
     new Intl.NumberFormat("ru-RU").format(n);
@@ -100,6 +99,9 @@ const CalculatorSection = () => {
               </div>
             ))}
           </div>
+          <p className="text-xs text-muted-foreground text-center mt-6">
+            Расчёт по средним показателям действующих партнёров. Фактические цифры зависят от региона, каналов сбыта и операционной эффективности.
+          </p>
         </motion.div>
       </div>
     </section>

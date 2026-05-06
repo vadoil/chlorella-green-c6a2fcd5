@@ -22,14 +22,20 @@ const PackageSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <span className="text-sm font-semibold uppercase tracking-widest text-primary mb-4 block">
-            Что входит
+            Что входит во франшизу
           </span>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-            Пакет франшизы «под ключ»
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
+            Пакет «под ключ» за 899 000 ₽
           </h2>
+          <div className="inline-flex flex-wrap items-center justify-center gap-3 rounded-full bg-primary/10 border border-primary/20 px-5 py-2 text-sm">
+            <span className="text-muted-foreground">Ценность пакета:</span>
+            <span className="font-display font-bold text-foreground line-through opacity-60">~1 800 000 ₽</span>
+            <span className="text-muted-foreground">→ ваша цена:</span>
+            <span className="font-display font-bold text-primary">899 000 ₽</span>
+          </div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
