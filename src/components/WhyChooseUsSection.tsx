@@ -37,12 +37,12 @@ const WhyChooseUsSection = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.2 + i * 0.1 }}
-              className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 py-8 border-b border-border group"
+              className="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 py-8 border-b border-border group"
             >
-              <span className="font-display font-bold text-xl md:text-3xl text-foreground group-hover:text-primary transition-colors md:min-w-[280px]">
+              <span className="md:col-span-5 lg:col-span-4 font-display font-bold text-lg md:text-xl lg:text-2xl text-foreground group-hover:text-primary transition-colors leading-tight">
                 {a.keyword}
               </span>
-              <span className="text-muted-foreground leading-relaxed">{a.desc}</span>
+              <span className="md:col-span-7 lg:col-span-8 text-muted-foreground leading-relaxed">{a.desc}</span>
             </motion.div>
           ))}
         </div>
