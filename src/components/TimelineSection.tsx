@@ -72,6 +72,23 @@ const TimelineSection = () => {
             ))}
           </div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="text-center mt-16"
+        >
+          <p className="text-muted-foreground mb-5 text-lg">
+            Регионы закрываются по принципу эксклюзивности — один партнёр на территорию
+          </p>
+          <a
+            href="#calculator"
+            className="inline-flex items-center justify-center px-8 py-4 rounded-xl gradient-emerald text-primary-foreground font-display font-bold uppercase tracking-wider hover:scale-105 transition-transform"
+          >
+            Забронировать свой регион →
+          </a>
+        </motion.div>
       </div>
     </section>
   );

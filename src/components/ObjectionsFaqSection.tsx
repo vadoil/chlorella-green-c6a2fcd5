@@ -84,6 +84,25 @@ const ObjectionsFaqSection = () => {
             ))}
           </Accordion>
         </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="text-center mt-12"
+        >
+          <p className="text-muted-foreground mb-5">
+            Не нашли ответ на свой вопрос?
+          </p>
+          <a
+            href="https://wa.me/79277022777?text=Здравствуйте!%20У%20меня%20вопрос%20по%20франшизе%20хлореллы"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-8 py-4 rounded-xl gradient-emerald text-primary-foreground font-display font-bold uppercase tracking-wider hover:scale-105 transition-transform"
+          >
+            Задать вопрос в WhatsApp →
+          </a>
+        </motion.div>
       </div>
     </section>
   );
