@@ -42,19 +42,19 @@ const steps: Step[] = [
     subtitle: "Какую сумму готовы инвестировать?",
     icon: Wallet,
     options: [
-      { label: "До 2 млн ₽", value: "under2" },
-      { label: "2–3,5 млн ₽", value: "2to3" },
-      { label: "3,5–5 млн ₽", value: "3to5" },
-      { label: "Более 5 млн ₽", value: "over5" },
+      { label: "До 1 млн ₽", value: "under2" },
+      { label: "1–2 млн ₽", value: "2to3" },
+      { label: "2–3,5 млн ₽", value: "3to5" },
+      { label: "Более 3,5 млн ₽", value: "over5" },
     ],
   },
 ];
 
 const resultData: Record<string, { revenue: string; payback: string; margin: string }> = {
-  "under2": { revenue: "350–500 тыс. ₽/мес", payback: "10–12 мес", margin: "45–55%" },
-  "2to3": { revenue: "500–900 тыс. ₽/мес", payback: "8–10 мес", margin: "50–60%" },
-  "3to5": { revenue: "900 тыс. – 1,5 млн ₽/мес", payback: "6–8 мес", margin: "55–65%" },
-  "over5": { revenue: "1,5–3 млн ₽/мес", payback: "5–7 мес", margin: "60–70%" },
+  "under2": { revenue: "350–500 тыс. ₽/мес", payback: "4–6 мес", margin: "45–55%" },
+  "2to3": { revenue: "500–900 тыс. ₽/мес", payback: "4–5 мес", margin: "50–60%" },
+  "3to5": { revenue: "900 тыс. – 1,5 млн ₽/мес", payback: "3–4 мес", margin: "55–65%" },
+  "over5": { revenue: "1,5–3 млн ₽/мес", payback: "3–4 мес", margin: "60–70%" },
 };
 
 const QuizSection = () => {

@@ -3,10 +3,10 @@ import { motion, useInView } from "framer-motion";
 
 const rows = [
   { label: "Доходность годовая", deposit: "16–20%", realestate: "8–12%", stocks: "10–25%", chlorella: "120–180%", best: "chlorella" },
-  { label: "Срок окупаемости", deposit: "5+ лет", realestate: "12–18 лет", stocks: "5–10 лет", chlorella: "8–12 мес", best: "chlorella" },
+  { label: "Срок окупаемости", deposit: "5+ лет", realestate: "12–18 лет", stocks: "5–10 лет", chlorella: "4–6 мес", best: "chlorella" },
   { label: "Контроль над активом", deposit: "Низкий", realestate: "Средний", stocks: "Низкий", chlorella: "Полный", best: "chlorella" },
   { label: "Инфляционная защита", deposit: "Нет", realestate: "Да", stocks: "Частично", chlorella: "Да", best: "chlorella" },
-  { label: "Порог входа", deposit: "от 100 тыс.", realestate: "от 8 млн", stocks: "от 50 тыс.", chlorella: "от 1.5 млн", best: "deposit" },
+  { label: "Порог входа", deposit: "от 100 тыс.", realestate: "от 8 млн", stocks: "от 50 тыс.", chlorella: "от 899 тыс.", best: "deposit" },
   { label: "Ликвидность бизнеса", deposit: "—", realestate: "Высокая", stocks: "Высокая", chlorella: "Средняя", best: "realestate" },
 ];
 
@@ -34,7 +34,7 @@ const InvestmentCompareSection = () => {
             Сравнение инвестиций
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-            Куда выгоднее вложить 2 млн ₽?
+            Куда выгоднее вложить 900 тыс. ₽?
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
             Объективное сравнение хлореллы с классическими инструментами инвестирования

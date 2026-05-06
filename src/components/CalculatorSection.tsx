@@ -11,8 +11,8 @@ const CalculatorSection = () => {
   const monthlyRevenue = reactors * 120000;
   const monthlyCosts = reactors * 35000 + 50000;
   const monthlyProfit = monthlyRevenue - monthlyCosts;
-  const investment = reactors * 450000 + 200000;
-  const paybackMonths = Math.ceil(investment / monthlyProfit);
+  const investment = 899000 + reactors * 250000;
+  const paybackMonths = Math.max(1, Math.ceil(investment / monthlyProfit));
 
   const formatNumber = (n: number) =>
     new Intl.NumberFormat("ru-RU").format(n);

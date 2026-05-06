@@ -33,7 +33,7 @@ const HeroSection = () => {
 
           <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
             className="text-lg md:text-xl text-primary-foreground/70 mb-10 max-w-2xl leading-relaxed">
-            Готовая бизнес-модель «под ключ»: от настройки биореакторов до сбыта готовой продукции. Окупаемость — от 6 месяцев.
+            Готовая бизнес-модель «под ключ»: от настройки биореакторов до сбыта готовой продукции. Окупаемость — 4–6 месяцев.
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
@@ -57,7 +57,7 @@ const HeroSection = () => {
             className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-primary-foreground/10 max-w-xl">
             {[
               { value: "55%+", label: "Маржинальность" },
-              { value: "8–12 мес", label: "Окупаемость" },
+              { value: "4–6 мес", label: "Окупаемость" },
               { value: "9.8%", label: "Рост рынка" },
             ].map((stat) => (
               <div key={stat.label}>
