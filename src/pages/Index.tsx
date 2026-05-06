@@ -13,7 +13,7 @@ import ScenariosSection from "@/components/ScenariosSection";
 import StarterKitSection from "@/components/StarterKitSection";
 import TimelineSection from "@/components/TimelineSection";
 import GuaranteesSection from "@/components/GuaranteesSection";
-import FranchiseeTestimonialsSection from "@/components/FranchiseeTestimonialsSection";
+
 import PackageSection from "@/components/PackageSection";
 import StepsSection from "@/components/StepsSection";
 import ObjectionsFaqSection from "@/components/ObjectionsFaqSection";
@@ -44,7 +44,7 @@ const Index = () => (
     <TimelineSection />
     <div id="steps"><StepsSection /></div>
     <GuaranteesSection />
-    <FranchiseeTestimonialsSection />
+    
     <ObjectionsFaqSection />
     <div id="faq"><FaqSection /></div>
     <div id="blog"><BlogPreviewSection /></div>

@@ -2,12 +2,12 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const stats = [
-  { value: "12+", label: "лет на рынке хлореллы" },
-  { value: "47", label: "действующих франчайзи" },
-  { value: "23", label: "региона России" },
-  { value: "180+", label: "тонн пасты в год" },
-  { value: "320", label: "B2B-клиентов в базе" },
-  { value: "94%", label: "франчайзи окупились за год" },
+  { value: "55%+", label: "маржинальность продукта" },
+  { value: "8–12", label: "месяцев до окупаемости" },
+  { value: "2 нед.", label: "от запуска до первой продажи" },
+  { value: "6+", label: "отраслей применения" },
+  { value: "9.8%", label: "ежегодный рост рынка" },
+  { value: "87%", label: "хлореллы в РФ — импорт" },
 ];
 
 const CompanyStatsSection = () => {
@@ -24,13 +24,13 @@ const CompanyStatsSection = () => {
           className="text-center mb-12"
         >
           <span className="text-sm font-semibold uppercase tracking-widest text-primary mb-4 block">
-            Цифры компании
+            Почему это круто
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-            Не стартап. Действующий бизнес.
+            Цифры, которые говорят сами за себя
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
-            Мы передаём франчайзи технологию, отработанную на десятках производств
+            Хлорелла — один из самых маржинальных и быстрорастущих агропродуктов на российском рынке
           </p>
         </motion.div>
 
