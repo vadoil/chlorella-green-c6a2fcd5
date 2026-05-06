@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
@@ -8,12 +8,18 @@ import { toast } from "sonner";
 interface ApplicationModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  defaultComment?: string;
 }
 
-const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
+const ApplicationModal = ({ open, onOpenChange, defaultComment }: ApplicationModalProps) => {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({ name: "", phone: "", email: "", city: "", comment: "" });
+  const [form, setForm] = useState({ name: "", phone: "", email: "", city: "", comment: defaultComment || "" });
+
+  // Sync defaultComment when prop changes
+  React.useEffect(() => {
+    if (defaultComment) setForm(f => ({ ...f, comment: defaultComment }));
+  }, [defaultComment]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
