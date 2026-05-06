@@ -64,6 +64,7 @@ const FloatingChat = () => {
       >
         {open ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
       </button>
+      <CallbackModal open={callbackOpen} onOpenChange={setCallbackOpen} />
     </div>
   );
 };
