@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Download, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ApplicationModal from "@/components/ApplicationModal";
 import heroImage from "@/assets/hero-ibc-cubes.jpg";
