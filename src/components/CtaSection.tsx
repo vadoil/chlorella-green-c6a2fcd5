@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ApplicationModal from "@/components/ApplicationModal";
+import CallbackButton from "@/components/CallbackButton";
 
 const CtaSection = () => {
   const ref = useRef(null);
@@ -28,11 +29,14 @@ const CtaSection = () => {
             <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto mb-10">
               Получите персональный расчёт инвестиций, подробную презентацию проекта и консультацию эксперта — бесплатно
             </p>
-            <Button size="lg" onClick={() => setModalOpen(true)}
-              className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-lg px-10 py-6 rounded-xl shadow-xl hover:scale-105 transition-all duration-300">
-              Получить презентацию
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button size="lg" onClick={() => setModalOpen(true)}
+                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-lg px-10 py-6 rounded-xl shadow-xl hover:scale-105 transition-all duration-300">
+                Получить презентацию
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <CallbackButton variant="light" size="lg" className="text-lg px-8 py-6" />
+            </div>
           </div>
         </motion.div>
       </div>
