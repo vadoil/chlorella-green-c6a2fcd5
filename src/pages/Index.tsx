@@ -14,6 +14,7 @@ import StarterKitSection from "@/components/StarterKitSection";
 import TimelineSection from "@/components/TimelineSection";
 import GuaranteesSection from "@/components/GuaranteesSection";
 import ParallaxBannerSection from "@/components/ParallaxBannerSection";
+import MarketplaceExamplesSection from "@/components/MarketplaceExamplesSection";
 
 import PackageSection from "@/components/PackageSection";
 import StepsSection from "@/components/StepsSection";
@@ -34,6 +35,7 @@ const Index = () => (
     <div id="applications"><ApplicationsTabsSection /></div>
     <ParallaxBannerSection />
     <MarketOpportunitySection />
+    <MarketplaceExamplesSection />
     <InvestorRoiSection />
     <InvestmentCompareSection />
     <ComparisonSection />
