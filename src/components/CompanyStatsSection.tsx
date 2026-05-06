@@ -2,12 +2,12 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const stats = [
-  { value: "55%+", label: "маржинальность продукта" },
-  { value: "8–12", label: "месяцев до окупаемости" },
-  { value: "2 нед.", label: "от запуска до первой продажи" },
-  { value: "6+", label: "отраслей применения" },
-  { value: "9.8%", label: "ежегодный рост рынка" },
-  { value: "87%", label: "хлореллы в РФ — импорт" },
+  { value: "60–90 л", label: "суспензии в сутки с одного биореактора" },
+  { value: "0,5 кВт·ч", label: "потребление электроэнергии" },
+  { value: "1 час", label: "работы технолога на цикл 2–3 суток" },
+  { value: "20 м²", label: "площадь производственного помещения" },
+  { value: "32 млн", label: "клеток на мл — товарная плотность" },
+  { value: "2000 л", label: "стартовой питательной среды в комплекте" },
 ];
 
 const CompanyStatsSection = () => {
@@ -24,13 +24,13 @@ const CompanyStatsSection = () => {
           className="text-center mb-12"
         >
           <span className="text-sm font-semibold uppercase tracking-widest text-primary mb-4 block">
-            Почему это круто
+            Технология производства
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-            Цифры, которые говорят сами за себя
+            Простое производство — высокая маржа
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
-            Хлорелла — один из самых маржинальных и быстрорастущих агропродуктов на российском рынке
+            Минимум трудозатрат, минимум площади, минимум электричества — и высокомаржинальный продукт на выходе
           </p>
         </motion.div>
 
