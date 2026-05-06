@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Leaf, Menu, X, Home, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ApplicationModal from "@/components/ApplicationModal";
+import CallbackButton from "@/components/CallbackButton";
 
 const WHATSAPP_NUMBER = "79277022777";
 const TELEGRAM_USERNAME = "chlorella_green";
@@ -165,6 +166,12 @@ const Navbar = () => {
                 }`}
               />
             ))}
+            <CallbackButton
+              variant={forceScrolled ? "outline" : "light"}
+              size="sm"
+              className="text-sm px-4 py-2"
+              label="Звонок"
+            />
             <Button
               size="sm"
               onClick={() => setModalOpen(true)}
@@ -191,6 +198,7 @@ const Navbar = () => {
             {links.map((l) => (
               <NavItem key={l.href} l={l} className="block text-sm font-medium text-foreground py-2" />
             ))}
+            <CallbackButton variant="outline" size="sm" className="w-full" />
             <Button
               size="sm"
               onClick={() => {

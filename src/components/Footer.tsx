@@ -1,5 +1,6 @@
 import { Leaf, Phone, Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import CallbackButton from "@/components/CallbackButton";
 
 const WHATSAPP_NUMBER = "79277022777";
 const TELEGRAM_USERNAME = "chlorella_green";
@@ -31,9 +32,10 @@ const Footer = () => (
             </div>
             <span className="font-display font-bold text-xl">Chlorella Green</span>
           </Link>
-          <p className="text-white/60 text-sm leading-relaxed">
+          <p className="text-white/60 text-sm leading-relaxed mb-4">
             Франшиза производства живой хлореллы. Готовый бизнес «под ключ» от лидера российского рынка.
           </p>
+          <CallbackButton variant="light" size="sm" className="w-full" />
         </div>
 
         {/* Navigation */}
