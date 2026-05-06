@@ -1,11 +1,12 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Boxes, FileText, HeadphonesIcon, FlaskConical, Globe } from "lucide-react";
+import { Boxes, FileText, HeadphonesIcon, FlaskConical, Globe, Sprout } from "lucide-react";
 
 const items = [
   { icon: Boxes, title: "Кит-комплект биореактора", desc: "Готовый комплект для самостоятельной сборки по пошаговой инструкции." },
   { icon: FileText, title: "Технологическая документация", desc: "Полный регламент производства суспензии хлореллы: рецептура, режимы, контроль." },
   { icon: HeadphonesIcon, title: "Консультирование и сопровождение", desc: "Поддержка по технологии культивирования суспензии хлореллы на всех этапах." },
+  { icon: Sprout, title: "Маточная культура хлореллы", desc: "Живая маточная культура для старта франшизы — основа всех производственных циклов." },
   { icon: FlaskConical, title: "Питательная среда на 2000 л", desc: "Унифицированная среда для старта — хватает на 2000 литров готовой суспензии." },
   { icon: Globe, title: "Сайт-магазин с эквайрингом", desc: "Готовый интернет-магазин с подключённым приёмом онлайн-платежей." },
 ];
@@ -30,11 +31,11 @@ const StarterKitSection = () => {
             Что вы получаете в день старта
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
-            5 ключевых компонентов готового бизнеса — всё включено в стоимость франшизы
+            6 ключевых компонентов готового бизнеса — всё включено в стоимость франшизы
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {items.map((item, i) => (
             <motion.div
               key={item.title}
