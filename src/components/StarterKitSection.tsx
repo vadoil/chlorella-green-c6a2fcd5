@@ -35,7 +35,7 @@ const StarterKitSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {items.map((item, i) => (
             <motion.div
               key={item.title}
