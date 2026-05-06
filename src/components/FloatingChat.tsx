@@ -1,16 +1,30 @@
 import { useState } from "react";
-import { MessageCircle, X, Phone } from "lucide-react";
+import { MessageCircle, X, Phone, PhoneCall } from "lucide-react";
+import CallbackModal from "@/components/CallbackModal";
 
 const WHATSAPP_NUMBER = "79277022777";
 const TELEGRAM_USERNAME = "chlorella_green";
 
 const FloatingChat = () => {
   const [open, setOpen] = useState(false);
+  const [callbackOpen, setCallbackOpen] = useState(false);
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
       {open && (
         <div className="flex flex-col gap-3 mb-2 animate-in fade-in slide-in-from-bottom-4 duration-300">
+          {/* Callback request */}
+          <button
+            onClick={() => {
+              setCallbackOpen(true);
+              setOpen(false);
+            }}
+            className="flex items-center gap-3 rounded-full gradient-emerald text-primary-foreground pl-4 pr-5 py-3 shadow-lg hover:scale-105 transition-transform"
+          >
+            <PhoneCall className="h-5 w-5" />
+            <span className="text-sm font-medium">Заказать звонок</span>
+          </button>
+
           {/* Phone */}
           <a
             href="tel:+79277022777"
