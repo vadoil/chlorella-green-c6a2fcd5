@@ -35,6 +35,7 @@ const Index = () => (
     <InvestorRoiSection />
     <InvestmentCompareSection />
     <ComparisonSection />
+    <ConsultationCtaSection />
     <WhyChooseUsSection />
     <div id="calculator"><CalculatorSection /></div>
     <ScenariosSection />
