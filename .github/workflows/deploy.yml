@@ -1,0 +1,65 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-vps
+  cancel-in-progress: false
+
+env:
+  PROJECT: chlorella-delo
+  REMOTE_BASE: /var/www/chlorella-delo
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy via rsync
+        run: |
+          RELEASE="${{ github.sha }}"
+          REMOTE="${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}"
+          REMOTE_RELEASE="${REMOTE_BASE}/releases/${RELEASE}"
+
+          ssh -i ~/.ssh/id_ed25519 $REMOTE "mkdir -p ${REMOTE_RELEASE}"
+          rsync -az --delete -e "ssh -i ~/.ssh/id_ed25519" \
+            dist/ $REMOTE:${REMOTE_RELEASE}/
+
+          ssh -i ~/.ssh/id_ed25519 $REMOTE "
+            ln -sfn ${REMOTE_RELEASE} ${REMOTE_BASE}/current && \
+            sudo /usr/sbin/nginx -t && \
+            sudo /bin/systemctl reload nginx && \
+            ls -1dt ${REMOTE_BASE}/releases/*/ | tail -n +6 | xargs -r rm -rf
+          "
+
+      - name: Healthcheck
+        run: |
+          for i in {1..10}; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" https://chlorella-delo.ru/ || echo 000)
+            echo "Attempt $i: $code"
+            [ "$code" = "200" ] && exit 0
+            sleep 3
+          done
+          exit 1
