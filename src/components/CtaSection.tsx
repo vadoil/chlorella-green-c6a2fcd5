@@ -18,12 +18,12 @@ const CtaSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="relative rounded-3xl gradient-emerald p-12 md:p-20 text-center overflow-hidden"
+          className="relative rounded-3xl gradient-emerald p-6 sm:p-12 md:p-20 text-center overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-primary-foreground/5 blur-3xl" />
           <div className="absolute bottom-0 left-0 w-60 h-60 rounded-full bg-primary-foreground/5 blur-3xl" />
           <div className="relative z-10">
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6 leading-[1.15] break-words [overflow-wrap:anywhere] hyphens-auto" lang="ru">
               Готовы запустить производство хлореллы?
             </h2>
             <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto mb-10">
