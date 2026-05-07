@@ -63,7 +63,7 @@ const TimelineSection = () => {
                       <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg gradient-emerald flex items-center justify-center flex-shrink-0">
                         <m.icon className="h-4 w-4 sm:h-5 sm:w-5 text-primary-foreground" />
                       </div>
-                      <h3 className="font-display font-bold text-base sm:text-lg text-foreground leading-tight break-words">{m.title}</h3>
+                      <h3 className="font-display font-bold text-base sm:text-lg text-foreground leading-tight break-words [overflow-wrap:anywhere] hyphens-auto min-w-0" lang="ru">{m.title}</h3>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed break-words">{m.desc}</p>
                   </div>
