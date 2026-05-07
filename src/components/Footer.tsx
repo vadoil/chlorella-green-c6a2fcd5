@@ -63,15 +63,15 @@ const Footer = () => (
               </a>
             </li>
             <li>
-              <a href="mailto:info@chlorella-green.ru" className="flex items-center gap-2 text-white/70 hover:text-white transition-colors">
+              <a href="mailto:valerian.orloff@yandex.ru" className="flex items-center gap-2 text-white/70 hover:text-white transition-colors">
                 <Mail className="h-4 w-4 text-primary-foreground/80" />
-                info@chlorella-green.ru
+                valerian.orloff@yandex.ru
               </a>
             </li>
             <li>
-              <a href="https://chlorella-green.ru" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/70 hover:text-white transition-colors">
+              <a href="https://chlorella-delo.ru" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/70 hover:text-white transition-colors">
                 <MapPin className="h-4 w-4 text-primary-foreground/80" />
-                chlorella-green.ru
+                chlorella-delo.ru
               </a>
             </li>
           </ul>
