@@ -58,15 +58,25 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }}
-            className="grid grid-cols-3 gap-3 sm:gap-6 mt-16 pt-8 border-t border-primary-foreground/10 max-w-xl">
+            className="grid grid-cols-3 gap-2 sm:gap-4 mt-12 sm:mt-16 max-w-xl">
             {[
-              { value: "от 2 млн ₽", label: "Прибыль/год после окупаемости" },
-              { value: "4–6 мес", label: "Окупаемость" },
-              { value: "+50%", label: "Рост рынка к 2030" },
+              { value: "от 2 млн ₽", label: "Прибыль/год", sub: "после окупаемости" },
+              { value: "4–6 мес", label: "Окупаемость", sub: "под ключ" },
+              { value: "+50%", label: "Рост рынка", sub: "к 2030 году" },
             ].map((stat) => (
-              <div key={stat.label} className="min-w-0">
-                <div className="font-display text-base sm:text-2xl md:text-3xl font-bold text-emerald-glow break-words leading-tight">{stat.value}</div>
-                <div className="text-[11px] sm:text-sm text-primary-foreground/50 mt-1 leading-snug">{stat.label}</div>
+              <div
+                key={stat.label}
+                className="min-w-0 rounded-xl sm:rounded-2xl border border-primary-foreground/10 bg-primary-foreground/5 backdrop-blur-md p-3 sm:p-5 hover:border-emerald-glow/40 hover:bg-primary-foreground/10 transition-all duration-300"
+              >
+                <div className="font-display text-base sm:text-2xl md:text-3xl font-bold text-emerald-glow leading-tight whitespace-nowrap">
+                  {stat.value}
+                </div>
+                <div className="text-[11px] sm:text-sm font-medium text-primary-foreground/80 mt-2 leading-snug">
+                  {stat.label}
+                </div>
+                <div className="text-[10px] sm:text-xs text-primary-foreground/40 mt-0.5 leading-snug">
+                  {stat.sub}
+                </div>
               </div>
             ))}
           </motion.div>
