@@ -14,6 +14,7 @@ import TimelineSection from "@/components/TimelineSection";
 import GuaranteesSection from "@/components/GuaranteesSection";
 import MarketplaceExamplesSection from "@/components/MarketplaceExamplesSection";
 import PackageSection from "@/components/PackageSection";
+import FranchiseeTestimonialsSection from "@/components/FranchiseeTestimonialsSection";
 import ObjectionsFaqSection from "@/components/ObjectionsFaqSection";
 import BlogPreviewSection from "@/components/BlogPreviewSection";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
@@ -39,6 +40,7 @@ const Index = () => (
     <div id="quiz"><QuizSection /></div>
     <div id="package"><PackageSection /></div>
     <div id="steps"><TimelineSection /></div>
+    <FranchiseeTestimonialsSection />
     <GuaranteesSection />
     <div id="faq"><ObjectionsFaqSection /></div>
     <div id="blog"><BlogPreviewSection /></div>
