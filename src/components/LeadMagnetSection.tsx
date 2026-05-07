@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { FileDown, FileSpreadsheet, Video, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { honeypotProps } from "@/lib/formGuard";
 
 const magnets = [
   {
@@ -33,10 +34,16 @@ const magnets = [
 const LeadMagnetSection = () => {
   const [submitted, setSubmitted] = useState<number | null>(null);
   const [email, setEmail] = useState("");
+  const [hp, setHp] = useState("");
+  const mountedAt = useRef(Date.now());
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (index: number) => {
     if (!email) return;
+    if (hp.trim() || Date.now() - mountedAt.current < 2000) {
+      setSubmitted(index);
+      return;
+    }
     setLoading(true);
     const { error } = await supabase.from("leads").insert({
       email,
