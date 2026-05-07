@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ProblemSection from "@/components/ProblemSection";
 import CompanyStatsSection from "@/components/CompanyStatsSection";
+import ProductionVideoSection from "@/components/ProductionVideoSection";
 import MarketOpportunitySection from "@/components/MarketOpportunitySection";
 import InvestorRoiSection from "@/components/InvestorRoiSection";
 import InvestmentCompareSection from "@/components/InvestmentCompareSection";
@@ -28,6 +29,7 @@ const Index = () => (
     <HeroSection />
     <div id="problem"><ProblemSection /></div>
     <CompanyStatsSection />
+    <ProductionVideoSection />
     <div id="applications"><ApplicationsTabsSection /></div>
     <MarketOpportunitySection />
     <MarketplaceExamplesSection />
