@@ -21,7 +21,7 @@ const testimonials = [
     revenue: "1.8 млн ₽/мес",
     payback: "6 месяцев",
     quote: "Боялась, что не разберусь в биотехнологии. Куратор провёл за руку. Сейчас у меня 2 биореактора и поставки в 4 региона.",
-    image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=600&h=650&fit=crop",
+    image: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&h=650&fit=crop",
   },
   {
     name: "Дмитрий С.",
