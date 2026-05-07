@@ -92,7 +92,7 @@ const InvestorRoiSection = () => {
               <div className="text-white/60 text-xs uppercase tracking-widest font-display mb-3 text-center">
                 {item.label}
               </div>
-              <div className="font-display font-bold text-3xl md:text-5xl text-white mb-2 text-center">
+              <div className="font-display font-bold text-2xl md:text-3xl lg:text-4xl text-white mb-2 text-center whitespace-nowrap">
                 {item.value}
               </div>
               <div className="text-white/60 text-xs text-center mb-4">{item.sub}</div>
