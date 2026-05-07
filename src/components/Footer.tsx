@@ -111,25 +111,23 @@ const Footer = () => (
       </div>
 
       <div className="border-t border-white/10 pt-6 mb-6">
-        <h4 className="font-display font-semibold text-sm uppercase tracking-wider mb-3 text-white/80">Юридическая информация</h4>
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs text-white/60">
-          <div><span className="text-white/40">Организация:</span><br/>ООО «Хлорелла Грин»</div>
-          <div><span className="text-white/40">ИНН:</span><br/>6450000000</div>
-          <div><span className="text-white/40">ОГРН:</span><br/>1136450000000</div>
-          <div><span className="text-white/40">Юр. адрес:</span><br/>г. Саратов, ул. Производственная</div>
+        <h4 className="font-display font-semibold text-sm uppercase tracking-wider mb-3 text-white/80">Реквизиты</h4>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs text-white/60">
+          <div><span className="text-white/40">ИП:</span><br/>Орлов Валерьян Вениаминович</div>
+          <div><span className="text-white/40">ИНН:</span><br/>635785890230</div>
+          <div><span className="text-white/40">ОГРНИП:</span><br/>324632700075171</div>
         </div>
-        <p className="text-xs text-white/40 mt-3">
-          Реквизиты — заглушка. Замени на актуальные данные ООО/ИП и № товарного знака.
-        </p>
       </div>
 
       <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-sm text-white/50">
           © {new Date().getFullYear()} Chlorella Green. Все права защищены.
         </p>
-        <p className="text-xs text-white/40">
-          Информация на сайте не является публичной офертой
-        </p>
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-white/50">
+          <Link to="/privacy" className="hover:text-white transition-colors">Политика конфиденциальности</Link>
+          <Link to="/cookies" className="hover:text-white transition-colors">Cookie</Link>
+          <span className="text-white/40">Информация на сайте не является публичной офертой</span>
+        </div>
       </div>
     </div>
   </footer>
