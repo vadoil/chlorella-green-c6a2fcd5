@@ -11,7 +11,7 @@ const testimonials = [
     revenue: "1.2 млн ₽/мес",
     payback: "5 месяцев",
     quote: "Вышел из найма в 45 лет. За первые полгода окупил 70% вложений. Главное — клиентов передали готовых, не пришлось искать с нуля.",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=650&fit=crop",
+    image: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=600&h=650&fit=crop",
   },
   {
     name: "Елена М.",
@@ -21,7 +21,7 @@ const testimonials = [
     revenue: "1.8 млн ₽/мес",
     payback: "6 месяцев",
     quote: "Боялась, что не разберусь в биотехнологии. Куратор провёл за руку. Сейчас у меня 2 биореактора и поставки в 4 региона.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=650&fit=crop",
+    image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=600&h=650&fit=crop",
   },
   {
     name: "Дмитрий С.",
@@ -31,7 +31,7 @@ const testimonials = [
     revenue: "950 тыс. ₽/мес",
     payback: "4 месяца",
     quote: "Запустился за 52 дня. Первая отгрузка — рыбхоз из базы франшизы. Дальше — сарафанное радио. Очередь на полгода вперёд.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=650&fit=crop",
+    image: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=600&h=650&fit=crop",
   },
 ];
 
