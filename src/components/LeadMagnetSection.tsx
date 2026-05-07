@@ -89,7 +89,8 @@ const LeadMagnetSection = () => {
                   Отправлено! Проверьте почту.
                 </div>
               ) : (
-                <div className="flex gap-2">
+                <div className="flex gap-2 relative">
+                  <input {...honeypotProps(hp, setHp)} />
                   <Input
                     type="email"
                     placeholder="your@email.com"
