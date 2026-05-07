@@ -41,10 +41,10 @@ const CompanyStatsSection = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.4, delay: i * 0.07 }}
-              className="bg-card p-8 text-center hover:bg-primary/5 transition-colors"
+              className="bg-card p-4 sm:p-8 text-center hover:bg-primary/5 transition-colors min-w-0"
             >
-              <div className="font-display font-bold text-4xl md:text-5xl text-primary mb-2">{s.value}</div>
-              <div className="text-sm text-muted-foreground">{s.label}</div>
+              <div className="font-display font-bold text-xl sm:text-4xl md:text-5xl text-primary mb-1 sm:mb-2 leading-tight whitespace-nowrap">{s.value}</div>
+              <div className="text-[12px] sm:text-sm text-muted-foreground leading-snug">{s.label}</div>
             </motion.div>
           ))}
         </div>
