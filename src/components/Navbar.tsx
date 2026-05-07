@@ -100,15 +100,14 @@ const Navbar = () => {
         <div className="container mx-auto flex items-center justify-between h-16 px-4">
           <div className="flex items-center gap-4">
             <Link to="/" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 rounded-lg gradient-emerald flex items-center justify-center shadow-md transition-transform duration-300 group-hover:rotate-12">
-                <Leaf className="h-4 w-4 text-primary-foreground" />
-              </div>
+              <img src={logoMark} alt="Chlorella Delo" width={32} height={32}
+                className="w-8 h-8 transition-transform duration-300 group-hover:rotate-12" />
               <span
                 className={`font-display font-bold text-lg ${
                   forceScrolled ? "text-foreground" : "text-primary-foreground"
                 }`}
               >
-                Chlorella Green
+                Chlorella Delo
               </span>
             </Link>
 
