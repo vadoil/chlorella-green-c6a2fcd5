@@ -80,22 +80,25 @@ const InvestorRoiSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 mb-12 rounded-xl overflow-hidden backdrop-blur-md">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 mb-12 rounded-xl overflow-hidden backdrop-blur-md">
           {roiData.map((item, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.15 + i * 0.1 }}
-              className="bg-white/5 backdrop-blur-md p-6 md:p-8 text-center"
+              className="bg-white/5 backdrop-blur-md p-6 md:p-8 flex flex-col"
             >
-              <div className="text-white/60 text-xs uppercase tracking-widest font-display mb-3">
+              <div className="text-white/60 text-xs uppercase tracking-widest font-display mb-3 text-center">
                 {item.label}
               </div>
-              <div className="font-display font-bold text-3xl md:text-5xl text-white mb-2">
+              <div className="font-display font-bold text-3xl md:text-5xl text-white mb-2 text-center">
                 {item.value}
               </div>
-              <div className="text-white/60 text-xs">{item.sub}</div>
+              <div className="text-white/60 text-xs text-center mb-4">{item.sub}</div>
+              <div className="text-white/75 text-xs leading-relaxed border-t border-white/10 pt-4 mt-auto">
+                {item.details}
+              </div>
             </motion.div>
           ))}
         </div>
