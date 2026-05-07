@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FileDown, Mail, CheckCircle } from "lucide-react";
+import { FileDown, FileSpreadsheet, Video, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { supabase } from "@/integrations/supabase/client";
@@ -11,14 +11,24 @@ const magnets = [
     title: "PDF-гайд: 5 ошибок при запуске био-производства",
     description: "Разбираем типичные ошибки новичков и даём пошаговые решения на основе опыта 20+ запусков.",
     cta: "Скачать бесплатно",
+    source: "lead_magnet_pdf",
   },
   {
-    icon: Mail,
-    title: "Бизнес-план с расчётом налогов и ФОТ",
-    description: "Детальная финансовая модель под ваш регион: расходы, выручка, точка безубыточности, налоги.",
-    cta: "Получить на почту",
+    icon: FileSpreadsheet,
+    title: "Финансовая модель в Excel под ваш регион",
+    description: "Готовая таблица: расходы, выручка, ФОТ, налоги, точка безубыточности. Меняете 5 параметров — получаете свой план.",
+    cta: "Получить файл",
+    source: "lead_magnet_excel",
+  },
+  {
+    icon: Video,
+    title: "Онлайн-встреча с основателем · среда 19:00 МСК",
+    description: "Личный созвон в Zoom: ответы на вопросы про производство, рынок, окупаемость. Без презентаций — только практика.",
+    cta: "Записаться",
+    source: "webinar",
   },
 ];
+
 
 const LeadMagnetSection = () => {
   const [submitted, setSubmitted] = useState<number | null>(null);
@@ -30,7 +40,7 @@ const LeadMagnetSection = () => {
     setLoading(true);
     const { error } = await supabase.from("leads").insert({
       email,
-      source: "lead_magnet",
+      source: magnets[index].source,
       comment: magnets[index].title,
     });
     setLoading(false);
@@ -58,7 +68,7 @@ const LeadMagnetSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {magnets.map((m, i) => (
             <div key={i} className="rounded-xl border border-border bg-background p-8 flex flex-col">
               <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-4">
