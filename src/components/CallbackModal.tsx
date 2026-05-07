@@ -76,6 +76,7 @@ const CallbackModal = ({ open, onOpenChange }: CallbackModalProps) => {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4 pt-2">
+            <input {...honeypotProps(hp, setHp)} />
             <input
               required
               type="text"
