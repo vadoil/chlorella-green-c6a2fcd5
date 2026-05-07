@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Leaf, Menu, X, Home } from "lucide-react";
+import { Menu, X, Home } from "lucide-react";
+import logoMark from "@/assets/logo-mark.png";
 import { Button } from "@/components/ui/button";
 import ApplicationModal from "@/components/ApplicationModal";
 import CallbackButton from "@/components/CallbackButton";
