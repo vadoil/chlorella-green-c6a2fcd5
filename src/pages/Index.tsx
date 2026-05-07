@@ -6,6 +6,7 @@ import MarketOpportunitySection from "@/components/MarketOpportunitySection";
 import InvestorRoiSection from "@/components/InvestorRoiSection";
 import InvestmentCompareSection from "@/components/InvestmentCompareSection";
 import ComparisonSection from "@/components/ComparisonSection";
+import ConsultationCtaSection from "@/components/ConsultationCtaSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import ApplicationsTabsSection from "@/components/ApplicationsTabsSection";
 import CalculatorSection from "@/components/CalculatorSection";
@@ -34,6 +35,7 @@ const Index = () => (
     <InvestorRoiSection />
     <InvestmentCompareSection />
     <ComparisonSection />
+    <ConsultationCtaSection />
     <WhyChooseUsSection />
     <div id="calculator"><CalculatorSection /></div>
     <ScenariosSection />
