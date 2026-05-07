@@ -3,10 +3,34 @@ import { useRef } from "react";
 import farmImage from "@/assets/chlorella-facility-wide.jpg";
 
 const roiData = [
-  { label: "Потенциальная маржа", value: "55%+", sub: "при стабильном производстве" },
-  { label: "Срок окупаемости", value: "4–6 мес.", sub: "в зависимости от региона" },
-  { label: "Себестоимость литра", value: "~15 ₽", sub: "одна из самых низких в отрасли" },
-  { label: "Рост рынка", value: "9.8%", sub: "CAGR до 2030 года" },
+  {
+    label: "Потенциальная маржа",
+    value: "55%+",
+    sub: "при стабильном производстве",
+    details:
+      "Выручка с 1 биореактора ~180 000 ₽/мес, прямые расходы (вода, питательная среда, электричество, упаковка) — около 35 000 ₽. На 3+ реакторах постоянные расходы размазываются, и маржа растёт до 60–70%.",
+  },
+  {
+    label: "Срок окупаемости",
+    value: "4–6 мес.",
+    sub: "при работе на 3+ биореакторах",
+    details:
+      "Расчёт: инвестиции ~1 339 000 ₽ (франшиза 899 000 ₽ + 2 доп. реактора по 220 000 ₽) ÷ чистая прибыль ~295 000 ₽/мес = 4,5 мес. На 1 реакторе срок дольше (8–10 мес.) — но и вход дешевле.",
+  },
+  {
+    label: "Себестоимость литра",
+    value: "~15 ₽",
+    sub: "при оптовых закупках сырья",
+    details:
+      "Литр живой хлореллы продаётся от 180 ₽ опт и до 350 ₽ розница. Себестоимость складывается из питательной среды (~6 ₽), электричества и воды (~5 ₽), упаковки и логистики (~4 ₽). Наценка x10–x20.",
+  },
+  {
+    label: "Рост рынка",
+    value: "~9%",
+    sub: "CAGR до 2030 года",
+    details:
+      "По данным Mordor Intelligence и Grand View Research мировой рынок хлореллы растёт на 8–10% в год. В России спрос подогревают рыбоводство, БАДы, косметика и эко-фермерство — конкуренция в регионах минимальная.",
+  },
 ];
 
 const whyChlorella = [
@@ -56,22 +80,25 @@ const InvestorRoiSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 mb-12 rounded-xl overflow-hidden backdrop-blur-md">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 mb-12 rounded-xl overflow-hidden backdrop-blur-md">
           {roiData.map((item, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.15 + i * 0.1 }}
-              className="bg-white/5 backdrop-blur-md p-6 md:p-8 text-center"
+              className="bg-white/5 backdrop-blur-md p-6 md:p-8 flex flex-col"
             >
-              <div className="text-white/60 text-xs uppercase tracking-widest font-display mb-3">
+              <div className="text-white/60 text-xs uppercase tracking-widest font-display mb-3 text-center">
                 {item.label}
               </div>
-              <div className="font-display font-bold text-3xl md:text-5xl text-white mb-2">
+              <div className="font-display font-bold text-3xl md:text-5xl text-white mb-2 text-center">
                 {item.value}
               </div>
-              <div className="text-white/60 text-xs">{item.sub}</div>
+              <div className="text-white/60 text-xs text-center mb-4">{item.sub}</div>
+              <div className="text-white/75 text-xs leading-relaxed border-t border-white/10 pt-4 mt-auto">
+                {item.details}
+              </div>
             </motion.div>
           ))}
         </div>
