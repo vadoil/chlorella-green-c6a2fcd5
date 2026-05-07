@@ -58,15 +58,15 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }}
-            className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-primary-foreground/10 max-w-xl">
+            className="grid grid-cols-3 gap-3 sm:gap-6 mt-16 pt-8 border-t border-primary-foreground/10 max-w-xl">
             {[
               { value: "от 2 млн ₽", label: "Прибыль/год после окупаемости" },
               { value: "4–6 мес", label: "Окупаемость" },
               { value: "+50%", label: "Рост рынка к 2030" },
             ].map((stat) => (
-              <div key={stat.label}>
-                <div className="font-display text-2xl md:text-3xl font-bold text-emerald-glow">{stat.value}</div>
-                <div className="text-sm text-primary-foreground/50 mt-1">{stat.label}</div>
+              <div key={stat.label} className="min-w-0">
+                <div className="font-display text-base sm:text-2xl md:text-3xl font-bold text-emerald-glow break-words leading-tight">{stat.value}</div>
+                <div className="text-[11px] sm:text-sm text-primary-foreground/50 mt-1 leading-snug">{stat.label}</div>
               </div>
             ))}
           </motion.div>
