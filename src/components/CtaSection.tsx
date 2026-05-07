@@ -29,20 +29,20 @@ const CtaSection = () => {
             <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto mb-10">
               Получите персональный расчёт инвестиций, подробную презентацию проекта и консультацию эксперта — бесплатно
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center flex-wrap max-w-md sm:max-w-none mx-auto">
               <Button size="lg" onClick={() => setModalOpen(true)}
-                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-lg px-10 py-6 rounded-xl shadow-xl hover:scale-105 transition-all duration-300">
+                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-sm sm:text-lg px-5 sm:px-10 py-4 sm:py-6 rounded-xl shadow-xl hover:scale-105 transition-all duration-300 whitespace-normal">
                 Получить презентацию
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
               <Button size="lg" asChild variant="outline"
-                className="bg-transparent border-2 border-primary-foreground/60 text-primary-foreground hover:bg-primary-foreground/10 text-lg px-8 py-6 rounded-xl">
+                className="bg-transparent border-2 border-primary-foreground/60 text-primary-foreground hover:bg-primary-foreground/10 text-sm sm:text-lg px-5 sm:px-8 py-4 sm:py-6 rounded-xl whitespace-normal">
                 <a href="/chlorella-presentation.pdf" download>
-                  <Download className="mr-2 h-5 w-5" />
+                  <Download className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                   Скачать PDF
                 </a>
               </Button>
-              <CallbackButton variant="light" size="lg" className="text-lg px-8 py-6" />
+              <CallbackButton variant="light" size="lg" className="text-sm sm:text-lg px-5 sm:px-8 py-4 sm:py-6 whitespace-normal" />
             </div>
           </div>
         </motion.div>
