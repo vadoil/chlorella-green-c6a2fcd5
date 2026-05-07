@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { AlertTriangle, Leaf, TrendingUp } from "lucide-react";
+import { TrendingDown, Users, ShieldQuestion } from "lucide-react";
 import chlorellaImg from "@/assets/chlorella-closeup.jpg";
 
 const ProblemSection = () => {
@@ -9,9 +9,21 @@ const ProblemSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const problems = [
-    { icon: AlertTriangle, title: "Деградация почв", desc: "80% сельхозугодий требуют восстановления плодородия" },
-    { icon: Leaf, title: "Нехватка кормов", desc: "Спрос на качественные биодобавки для скота растёт на 25% в год" },
-    { icon: TrendingUp, title: "Запрос на эко-продукты", desc: "Рынок суперфудов достигнет $250 млрд к 2028 году" },
+    {
+      icon: TrendingDown,
+      title: "Перенасыщенные ниши",
+      desc: "Общепит, кофейни, барбершопы — высокая конкуренция, низкая маржа, постоянный демпинг.",
+    },
+    {
+      icon: ShieldQuestion,
+      title: "Франшизы без производства",
+      desc: "Большинство франшиз — это перепродажа чужих товаров. Вы зависите от поставщика и его цен.",
+    },
+    {
+      icon: Users,
+      title: "Сложно начать в одиночку",
+      desc: "Своё производство требует технологии, оборудования, поиска клиентов — годы проб и ошибок.",
+    },
   ];
 
   return (
@@ -24,17 +36,17 @@ const ProblemSection = () => {
             transition={{ duration: 0.7 }}
           >
             <span className="text-sm font-semibold uppercase tracking-widest text-primary mb-4 block">
-              Проблема и решение
+              Для кого эта франшиза
             </span>
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 text-foreground">
-              Хлорелла — универсальное решение для{" "}
-              <span className="text-gradient-emerald">агросектора и пищепрома</span>
+              Для тех, кто хочет{" "}
+              <span className="text-gradient-emerald">своё производство</span>, а не очередную «точку»
             </h2>
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              Микроводоросль хлорелла содержит более 650 биоактивных веществ.
-              Используется как биостимулятор роста растений, кормовая добавка
-              и суперфуд. Технология выращивания основана на управляемом
-              фотосинтезе в закрытых биореакторах.
+              Наши франчайзи — предприниматели 30–55 лет, инвесторы, фермеры
+              и руководители, которые ищут реальный бизнес с понятной экономикой.
+              Без сезонности, без зависимости от арендодателя и поставщика —
+              вы производите продукт сами и продаёте его в свой регион.
             </p>
             <div className="space-y-5">
               {problems.map((item, i) => (
@@ -66,16 +78,16 @@ const ProblemSection = () => {
             <div className="relative rounded-2xl overflow-hidden glow-emerald">
               <img
                 src={chlorellaImg}
-                alt="Хлорелла крупным планом"
+                alt="Производство живой хлореллы"
                 className="w-full h-auto rounded-2xl"
                 loading="lazy"
                 width={800}
                 height={800}
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 glass-card rounded-xl p-4 max-w-[200px]">
-              <div className="font-display text-2xl font-bold text-primary">650+</div>
-              <div className="text-sm text-muted-foreground">биоактивных веществ</div>
+            <div className="absolute -bottom-6 -left-6 glass-card rounded-xl p-4 max-w-[220px]">
+              <div className="font-display text-xl font-bold text-primary">Своё производство</div>
+              <div className="text-sm text-muted-foreground">с первого дня — а не точка продаж</div>
             </div>
           </motion.div>
         </div>
