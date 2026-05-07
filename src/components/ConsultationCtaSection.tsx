@@ -26,7 +26,7 @@ const ConsultationCtaSection = () => (
             variant="default"
             size="lg"
             label="Получить консультацию"
-            className="text-base sm:text-lg px-8 py-6"
+            className="w-full sm:w-auto max-w-full text-sm sm:text-lg px-5 sm:px-8 py-5 sm:py-6 whitespace-normal"
           />
         </div>
       </motion.div>
