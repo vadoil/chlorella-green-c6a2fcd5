@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { honeypotProps } from "@/lib/formGuard";
 
 interface ApplicationModalProps {
   open: boolean;
@@ -14,6 +15,8 @@ interface ApplicationModalProps {
 const ApplicationModal = ({ open, onOpenChange, defaultComment }: ApplicationModalProps) => {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [hp, setHp] = useState("");
+  const openedAt = useRef(Date.now());
   const [form, setForm] = useState({ name: "", phone: "", email: "", city: "", comment: defaultComment || "" });
 
   // Sync defaultComment when prop changes
@@ -23,6 +26,11 @@ const ApplicationModal = ({ open, onOpenChange, defaultComment }: ApplicationMod
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // Antispam
+    if (hp.trim() || Date.now() - openedAt.current < 2000) {
+      setSent(true);
+      return;
+    }
     setLoading(true);
     const { error } = await supabase.from("leads").insert({
       name: form.name,
@@ -76,6 +84,7 @@ const ApplicationModal = ({ open, onOpenChange, defaultComment }: ApplicationMod
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4 pt-2">
+            <input {...honeypotProps(hp, setHp)} />
             <input required type="text" placeholder="Ваше имя" maxLength={100}
               value={form.name} onChange={(e) => setForm(f => ({ ...f, name: e.target.value }))}
               className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50" />

@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { MapPin, Target, Wallet, ArrowRight, ArrowLeft, CheckCircle2, Calculator } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { honeypotProps } from "@/lib/formGuard";
 
 type Step = {
   title: string;
@@ -65,6 +66,8 @@ const QuizSection = () => {
   const [phone, setPhone] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [hp, setHp] = useState("");
+  const mountedAt = useRef(Date.now());
 
   const selectOption = (value: string) => {
     const updated = [...answers];
@@ -89,6 +92,10 @@ const QuizSection = () => {
 
   const handleSubmit = async () => {
     if (!name.trim() || !phone.trim()) return;
+    if (hp.trim() || Date.now() - mountedAt.current < 2000) {
+      setSubmitted(true);
+      return;
+    }
     setLoading(true);
     const { error } = await supabase.from("leads").insert({
       name: name.trim(),
@@ -216,6 +223,7 @@ const QuizSection = () => {
 
             <p className="text-sm text-muted-foreground mb-4">Оставьте контакт — отправим подробный бизнес-план:</p>
             <div className="flex flex-col sm:flex-row gap-3 mb-4">
+              <input {...honeypotProps(hp, setHp)} />
               <input
                 type="text"
                 placeholder="Ваше имя"

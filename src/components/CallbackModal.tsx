@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Phone, CheckCircle2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { honeypotProps } from "@/lib/formGuard";
 
 interface CallbackModalProps {
   open: boolean;
@@ -13,10 +14,16 @@ interface CallbackModalProps {
 const CallbackModal = ({ open, onOpenChange }: CallbackModalProps) => {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [hp, setHp] = useState("");
+  const openedAt = useRef(Date.now());
   const [form, setForm] = useState({ name: "", phone: "" });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (hp.trim() || Date.now() - openedAt.current < 2000) {
+      setSent(true);
+      return;
+    }
     setLoading(true);
     const { error } = await supabase.from("leads").insert({
       name: form.name,
@@ -69,6 +76,7 @@ const CallbackModal = ({ open, onOpenChange }: CallbackModalProps) => {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4 pt-2">
+            <input {...honeypotProps(hp, setHp)} />
             <input
               required
               type="text"
