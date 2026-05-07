@@ -4,34 +4,34 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Андрей Кузнецов",
+    name: "Андрей К.",
     city: "Краснодар",
-    role: "Франчайзи с 2023 года",
+    role: "Франчайзи с 2025 года",
     invest: "899 тыс. ₽",
     revenue: "1.2 млн ₽/мес",
     payback: "5 месяцев",
     quote: "Вышел из найма в 45 лет. За первые полгода окупил 70% вложений. Главное — клиентов передали готовых, не пришлось искать с нуля.",
-    image: "https://chlorella-green.ru/wp-content/uploads/2024/08/Screenshot_78-600x650.png",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=650&fit=crop",
   },
   {
-    name: "Елена Морозова",
+    name: "Елена М.",
     city: "Новосибирск",
-    role: "Франчайзи с 2022 года",
+    role: "Франчайзи с 2025 года",
     invest: "1.5 млн ₽",
     revenue: "1.8 млн ₽/мес",
     payback: "6 месяцев",
     quote: "Боялась, что не разберусь в биотехнологии. Куратор провёл за руку. Сейчас у меня 2 биореактора и поставки в 4 региона.",
-    image: "https://chlorella-green.ru/wp-content/uploads/2024/08/i-13-e1724748040603-600x650.webp",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=650&fit=crop",
   },
   {
-    name: "Дмитрий Соколов",
+    name: "Дмитрий С.",
     city: "Екатеринбург",
-    role: "Франчайзи с 2024 года",
+    role: "Франчайзи с 2026 года",
     invest: "899 тыс. ₽",
     revenue: "950 тыс. ₽/мес",
     payback: "4 месяца",
     quote: "Запустился за 52 дня. Первая отгрузка — рыбхоз из базы франшизы. Дальше — сарафанное радио. Очередь на полгода вперёд.",
-    image: "https://chlorella-green.ru/wp-content/uploads/2024/08/vVgtEKgnem0-600x650.jpg",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=650&fit=crop",
   },
 ];
 
