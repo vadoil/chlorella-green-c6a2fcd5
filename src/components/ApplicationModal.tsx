@@ -84,6 +84,7 @@ const ApplicationModal = ({ open, onOpenChange, defaultComment }: ApplicationMod
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4 pt-2">
+            <input {...honeypotProps(hp, setHp)} />
             <input required type="text" placeholder="Ваше имя" maxLength={100}
               value={form.name} onChange={(e) => setForm(f => ({ ...f, name: e.target.value }))}
               className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50" />
