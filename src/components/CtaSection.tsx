@@ -29,11 +29,18 @@ const CtaSection = () => {
             <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto mb-10">
               Получите персональный расчёт инвестиций, подробную презентацию проекта и консультацию эксперта — бесплатно
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
               <Button size="lg" onClick={() => setModalOpen(true)}
                 className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-lg px-10 py-6 rounded-xl shadow-xl hover:scale-105 transition-all duration-300">
                 Получить презентацию
                 <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button size="lg" asChild variant="outline"
+                className="bg-transparent border-2 border-primary-foreground/60 text-primary-foreground hover:bg-primary-foreground/10 text-lg px-8 py-6 rounded-xl">
+                <a href="/chlorella-presentation.pdf" download>
+                  <Download className="mr-2 h-5 w-5" />
+                  Скачать PDF
+                </a>
               </Button>
               <CallbackButton variant="light" size="lg" className="text-lg px-8 py-6" />
             </div>
