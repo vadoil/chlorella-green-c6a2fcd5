@@ -60,9 +60,9 @@ const HeroSection = () => {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }}
             className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-primary-foreground/10 max-w-xl">
             {[
-              { value: "55%+", label: "Маржинальность" },
+              { value: "от 2 млн ₽", label: "Прибыль/год после окупаемости" },
               { value: "4–6 мес", label: "Окупаемость" },
-              { value: "9.8%", label: "Рост рынка" },
+              { value: "+50%", label: "Рост рынка к 2030" },
             ].map((stat) => (
               <div key={stat.label}>
                 <div className="font-display text-2xl md:text-3xl font-bold text-emerald-glow">{stat.value}</div>
