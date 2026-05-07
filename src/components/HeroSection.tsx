@@ -26,7 +26,7 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-primary-foreground break-words hyphens-auto" lang="ru">
+            className="font-display text-[26px] sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.15] mb-6 text-primary-foreground">
             Запустите прибыльное производство{" "}
             <span className="text-emerald-glow">живой хлореллы</span> в своём регионе
           </motion.h1>
