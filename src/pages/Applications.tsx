@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { applications } from "@/components/ApplicationsTabsSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const ApplicationForm = ({ sphere }: { sphere: string }) => {
   const [sent, setSent] = useState(false);
