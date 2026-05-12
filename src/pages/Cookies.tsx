@@ -1,8 +1,10 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const Cookies = () => (
   <>
+    <SEO title="Политика использования cookie — Chlorella Delo" description="Какие cookie использует chlorella-delo.ru и как ими управлять." path="/cookies" noindex />
     <Navbar />
     <main className="pt-28 pb-20 bg-background">
       <div className="container mx-auto px-4 max-w-3xl prose prose-sm md:prose-base prose-headings:font-display prose-headings:text-foreground prose-p:text-muted-foreground prose-li:text-muted-foreground">
