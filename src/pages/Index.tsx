@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ProblemSection from "@/components/ProblemSection";
@@ -25,6 +26,12 @@ import Footer from "@/components/Footer";
 
 const Index = () => (
   <div className="min-h-screen bg-background">
+    <SEO
+      title="Франшиза хлореллы — окупаемость 4–6 мес, доход 2 млн ₽/год"
+      description="Франшиза производства живой хлореллы под ключ: окупаемость 4–6 месяцев, маржа 55%+, доход от 2 млн ₽ в год. Оборудование, технология и B2B-клиенты."
+      path="/"
+      keywords="франшиза хлореллы, производство хлореллы, живая хлорелла, биореактор, франшиза АПК, биотехнология, хлорелла для животноводства, хлорелла для рыбоводства, хлорелла купить"
+    />
     <Navbar />
     <HeroSection />
     <div id="problem"><ProblemSection /></div>

@@ -1,8 +1,22 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+
+User-agent: Yandex
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&yclid&gclid&fbclid /
+
 User-agent: Googlebot
 Allow: /
+Disallow: /admin
+Disallow: /admin/
 
 User-agent: Bingbot
 Allow: /
+Disallow: /admin
 
 User-agent: Twitterbot
 Allow: /
@@ -10,5 +24,5 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
+Sitemap: https://chlorella-delo.ru/sitemap.xml
+Host: https://chlorella-delo.ru

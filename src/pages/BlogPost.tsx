@@ -2,6 +2,7 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { ArrowLeft, Clock, Calendar } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
 import { blogPosts, categoryLabels } from "@/data/blogPosts";
 
@@ -11,8 +12,42 @@ const BlogPostPage = () => {
 
   if (!post) return <Navigate to="/blog" replace />;
 
+  const articleLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: { "@type": "Organization", name: "Chlorella Delo" },
+    publisher: {
+      "@type": "Organization",
+      name: "Chlorella Delo",
+      logo: { "@type": "ImageObject", url: "https://chlorella-delo.ru/favicon.png" },
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://chlorella-delo.ru/blog/${post.id}` },
+    articleSection: categoryLabels[post.category],
+  };
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Главная", item: "https://chlorella-delo.ru/" },
+      { "@type": "ListItem", position: 2, name: "Блог", item: "https://chlorella-delo.ru/blog" },
+      { "@type": "ListItem", position: 3, name: post.title, item: `https://chlorella-delo.ru/blog/${post.id}` },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={post.title}
+        description={post.excerpt}
+        path={`/blog/${post.id}`}
+        type="article"
+        publishedTime={post.date}
+        jsonLd={[articleLd, breadcrumbLd]}
+      />
       <Navbar />
       <article className="pt-24 pb-16">
         <div className="container mx-auto px-4 max-w-3xl">
