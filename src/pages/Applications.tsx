@@ -229,6 +229,12 @@ const ApplicationsPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Сферы применения хлореллы — АПК, рыбоводство, БАД"
+        description="Где применяется живая хлорелла: животноводство, птицеводство, рыбоводство, растениеводство, БАД и пищепром. Конкретные результаты и эффект для каждой отрасли."
+        path="/applications"
+        keywords="применение хлореллы, хлорелла для коров, хлорелла для рыб, хлорелла для птиц, хлорелла для растений, биоудобрение хлорелла"
+      />
       <Navbar />
       <section className="pt-28 pb-12 section-padding">
         <div className="container mx-auto text-center">

@@ -19,6 +19,19 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Блог о хлорелле — статьи об АПК, инвестициях и экологии"
+        description="Аналитика, кейсы и руководства о производстве живой хлореллы: для фермеров, инвесторов и экологии. Реальные цифры и опыт франчайзи."
+        path="/blog"
+        keywords="блог хлорелла, статьи о хлорелле, кейсы хлорелла, инвестиции в хлореллу, биотехнологии новости"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          "name": "Блог Chlorella Delo",
+          "url": "https://chlorella-delo.ru/blog",
+          "description": "Статьи о производстве живой хлореллы, франшизе и применении в АПК",
+        }}
+      />
       <Navbar />
       <div className="pt-24 pb-20">
         <div className="container mx-auto px-4">
