@@ -68,7 +68,7 @@ const HeroSection = () => {
                 key={stat.label}
                 className="min-w-0 rounded-xl sm:rounded-2xl border border-primary-foreground/10 bg-primary-foreground/5 backdrop-blur-md p-3 sm:p-5 hover:border-emerald-glow/40 hover:bg-primary-foreground/10 transition-all duration-300"
               >
-                <div className="font-display text-base sm:text-2xl md:text-3xl font-bold text-emerald-glow leading-tight whitespace-nowrap">
+                <div className="font-display text-sm sm:text-2xl md:text-3xl font-bold text-emerald-glow leading-tight break-words">
                   {stat.value}
                 </div>
                 <div className="text-[11px] sm:text-sm font-medium text-primary-foreground/80 mt-2 leading-snug">
